@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+  div.container-narrow
+    div.masthead
+      ul.nav.nav-pills.pull-right
+        li
+          a(href='../') Home
+        li.active
+          a(href='/search') Search  
+        li
+          a(href='/contribute') Contribute
+        li
+          a(href='/about') About
+        li
+          a(href='/contact') Contact
+      div.spacer
+      
+    hr
+    
+    div.span12
+      h4 Search Product Ingredients
+      form
+        label Product Search
+        input(type="text")
+        
+        label Ingredient
+        input(type="text")
+        
+        label Contains
+        input(type="checkbox") 
+        i Leave unchecked for results that do not contain specified ingredient
+        p
+        a.btn Search          
+
+      hr
+    
+      div.footer
+        p KnowYourFood 2013
+
+
+
+    
