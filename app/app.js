@@ -8,9 +8,18 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , mongodb = require('mongodb')
-  , mongoose = require('mongoose');
+  , mongoose = require('mongoose')
+  , Product = require('./models/product'); // require model, pull in product model created;
 
 var app = express();
+
+mongoose.connect('mongodb://localhost/Products') // will create the Products database if it doesn't already exist.
+
+mongoose.connection.on("open", function(){
+  console.log("mongodb is connected!!");
+});
+
+Product.find({}, function(err, data) { console.log(err, data, data.length); });
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
