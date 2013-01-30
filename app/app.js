@@ -8,18 +8,55 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , mongodb = require('mongodb')
-  , mongoose = require('mongoose')
-  , Product = require('./models/product'); // require model, pull in product model created;
-
+  , mongoose = require('mongoose');
 var app = express();
+var db = mongoose.connection;
+
+//Mongoose models
+var Product = require('./models/product'); // require model, pull in product model created;
+
+//Controllers
+var ProductController = require('./controllers/products');
 
 mongoose.connect('mongodb://localhost/Products') // will create the Products database if it doesn't already exist.
 
-mongoose.connection.on("open", function(){
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
   console.log("mongodb is connected!!");
 });
 
-Product.find({}, function(err, data) { console.log(err, data, data.length); });
+/*
+//BUILDS THE NEW PRODUCT DOCUMENT
+var newProduct = new Product({'brandname' : 'Progresso', 'productname' : 'Vegetable Classics Creamy Mushroom', 'ingredients' : ['water','portabella mushrooms', 'soybean oil', 'modified food starch', 'cream', 'soy protein concentrate', 'mushroom extract', 'salt', 'butter', 'sugar', 'sodium phosphate', 'modified whey protein concentrate', 'dried parsley', 'onion powder', 'garlic powder', 'yeast extract', 'spice']});
+*/
+
+/*
+//INSERTS THE NEW PRODUCT INTO THE DATABASE COLLECTION
+newProduct.save(function (err, newProduct) {
+  if (err) 
+    console.log(err);
+  console.log("The following was written to the database: \n" + newProduct);
+});
+*/
+
+/*
+//FINDS ALL PRODUCTS IN THE COLLECTION
+Product.find(function (err, products) {
+  if (err) 
+    console.log(err);
+  console.log(products);
+});
+*
+
+/*  
+//FINDS ALL PRODUCTS MATCHING CRITERIA
+Product.find({ brandname: /^Campbell's/ }, function (err, products) {
+  if (err) 
+    console.log(err);
+  console.log(products);
+});
+*/
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -33,12 +70,18 @@ app.configure(function(){
   app.use(app.router);
 });
 
+//Routes
 app.get('/', routes.index);
 app.get('/search', routes.search);
 app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 
+app.get('/test', ProductController.showProducts);  //NOT YET WORKING
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
+
+
