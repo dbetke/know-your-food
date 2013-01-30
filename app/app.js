@@ -40,24 +40,6 @@ newProduct.save(function (err, newProduct) {
 });
 */
 
-/*
-//FINDS ALL PRODUCTS IN THE COLLECTION
-Product.find(function (err, products) {
-  if (err) 
-    console.log(err);
-  console.log(products);
-});
-*
-
-/*  
-//FINDS ALL PRODUCTS MATCHING CRITERIA
-Product.find({ brandname: /^Campbell's/ }, function (err, products) {
-  if (err) 
-    console.log(err);
-  console.log(products);
-});
-*/
-
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -77,8 +59,9 @@ app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 
-app.get('/test', ProductController.showProducts);  //NOT YET WORKING
-
+app.get('/allproducts', ProductController.showAllProducts);
+app.get('/brandsearch/:brandname', ProductController.findProductByBrand);
+app.get('/typesearch/:productname', ProductController.findProductByName);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
