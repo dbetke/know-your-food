@@ -4,9 +4,9 @@ var Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
 //define fields
-  brandname : String,
-  productname : String,
-  ingredients : [String],
+  brandname        : {type: String,  uppercase: true},
+  productname      : {type: String,  uppercase: true},
+  ingredients      : {type: [String],lowercase: true}
   
 });
 

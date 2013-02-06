@@ -26,6 +26,8 @@ db.once('open', function callback () {
   console.log("mongodb is connected!!");
 });
 
+var NewProduct = require('./test/products');
+
 /*
 //BUILDS THE NEW PRODUCT DOCUMENT
 var newProduct = new Product({'brandname' : 'Progresso', 'productname' : 'Vegetable Classics Creamy Mushroom', 'ingredients' : ['water','portabella mushrooms', 'soybean oil', 'modified food starch', 'cream', 'soy protein concentrate', 'mushroom extract', 'salt', 'butter', 'sugar', 'sodium phosphate', 'modified whey protein concentrate', 'dried parsley', 'onion powder', 'garlic powder', 'yeast extract', 'spice']});
