@@ -4,9 +4,12 @@ var Schema = mongoose.Schema;
 
 var ProductSchema = new Schema({
 //define fields
-  brandname        : {type: String,  uppercase: true},
-  productname      : {type: String,  uppercase: true},
-  ingredients      : {type: [String],lowercase: true}
+  brandname            : {type: String,  uppercase: true},
+  brandname_stripped   : {type: String,  uppercase: true}, //save brandname without punctuation for searches 
+  productname          : {type: String,  uppercase: true},
+  productname_stripped : {type: String,  uppercase: true}, //save productname without punctuation for searches
+  ingredients          : {type: [String],lowercase: true},
+  ingredients_stripped : {type: [String],lowercase: true}  //save ingredients without punctuation for searches
   
 });
 

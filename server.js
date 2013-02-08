@@ -26,7 +26,11 @@ db.once('open', function callback () {
   console.log("mongodb is connected!!");
 });
 
-var NewProduct = require('./test/products');
+
+/*USING FOR TESTING ONLY*/
+//var NewProduct = require('./test/products');
+//var NewProduct2 = require('./test/products');
+//var NewProduct3 = require('./test/products');
 
 /*
 //BUILDS THE NEW PRODUCT DOCUMENT
@@ -64,6 +68,10 @@ app.get('/contact', routes.contact);
 app.get('/allproducts', ProductController.showAllProducts);
 app.get('/brandsearch/:brandname', ProductController.findProductByBrand);
 app.get('/typesearch/:productname', ProductController.findProductByName);
+app.get('/combosearch/:brandname/:productname', ProductController.findProductByBrandAndType);
+app.get('/save/:brandname/:productname/:ingredients',ProductController.save);
+app.get('/ingredientsearch/:ingredient',ProductController.findProductByIngredient);
+app.get('/ingredientsearchwithtype/:productname/:ingredient',ProductController.findProductByTypeAndIngredient);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
