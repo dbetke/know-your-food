@@ -9,8 +9,13 @@ ProductController.saveProduct = function(req, res)  {
     var productname = req.body.productname.toUpperCase();
     var productname_stripped = req.body.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
     var ingredients = req.body.ingredients.toLowerCase();
-    var ingredients_stripped = req.body.ingredients.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredients
+    var ingredients_stripped = req.body.ingredients.toLowerCase().replace(/['";:.\/?\\-]/g, ''); //strips all punctuation from ingredients except commas
     
+    //parse ingredients by commas and store in array
+    var ingredients_array = ingredients.split(',');
+    var ingredients_stripped_array = ingredients_stripped.split(',');
+
+
     //require all fields
     if ((brandname != "") && (productname != "") && (ingredients != "")){
 	
@@ -23,7 +28,23 @@ ProductController.saveProduct = function(req, res)  {
 		res.send("Oops.  This product already exists");
 	    }
 	    else{
-		res.send("This product can be saved: " + brandname + " " + productname);
+		var newProduct = new Product({
+		    'brandname' : brandname,
+		    'brandname_stripped' : brandname_stripped,
+		    'productname' : productname,
+		    'productname_stripped' : productname_stripped,
+		    'ingredients' : ingredients_array,
+		    'ingredients_stripped' : ingredients_stripped_array
+		});
+
+		newProduct.save(function (err, newProduct) {
+		    if (err){
+			res.send(err);
+		    }
+		    else{
+			res.send("The following was written to the database: \n" + newProduct);
+		    }
+		});
 	    }
 	});
     }
