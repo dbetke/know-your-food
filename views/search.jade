@@ -21,18 +21,21 @@ block content
     
     div.span12
       h4 Search Product Ingredients
-      form
-        label Product Search
-        input(type="text")
-        
+      form(method='post',action='') 
+        label Brand Search
+        input(type='text', name='brandname', id='brandname')
+
+        label Product
+        input(type='text', name='productname', id='productname')
+
         label Ingredient
-        input(type="text")
+        input(type='text', name='ingredient', id='ingredient')
         
         label Contains
-        input(type="checkbox") 
+        input(type='checkbox') 
         i Leave unchecked for results that do not contain specified ingredient
         p
-        a.btn Search          
+        input(type='submit', name='search', value='Search').a.btn         
 
       hr
     

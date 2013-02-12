@@ -2,27 +2,38 @@ var Product = require('../models/product');
 
 var ProductController = { };
 
-ProductController.save = function(req, res)  {
-    var brandname = req.params.brandname.toUpperCase();
-    var brandname_stripped = req.params.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
-    var productname = req.params.productname.toUpperCase();
-    var productname_stripped = req.params.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
-    var ingredients = req.params.ingredients.toLowerCase();
-    var ingredients_stripped = req.params.ingredients.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredients
-    res.send("Brand name: " + brandname + "\nBrand name stripped: " + brandname_stripped + "\nProduct name: " + productname + "\nProduct name stripped :" + productname_stripped + "\nIngredients: " + ingredients + "\nIngredients stripped: " + ingredients_stripped);
-
-/*
-    product.save(function(err)  {
-            if(err) {
-            res.send('bad news: '+err.message);
-            }
-        else  {
-            res.send('your product was succesfully saved to the database');
-            }
-    });
-*/
+/* TODO: Use save function to save to database - currently only writing to the screen for testing */
+ProductController.saveProduct = function(req, res)  {
+    var brandname = req.body.brandname.toUpperCase();
+    var brandname_stripped = req.body.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
+    var productname = req.body.productname.toUpperCase();
+    var productname_stripped = req.body.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
+    var ingredients = req.body.ingredients.toLowerCase();
+    var ingredients_stripped = req.body.ingredients.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredients
+    
+    //require all fields
+    if ((brandname != "") && (productname != "") && (ingredients != "")){
+	
+	//Test if product already exists
+	Product.find({brandname_stripped: brandname_stripped, productname_stripped: productname_stripped}, function(err, products){
+	    if(err){
+		res.send('bad news: ' + err.message);
+	    }
+	    else if (products != ""){
+		res.send("Oops.  This product already exists");
+	    }
+	    else{
+		res.send("This product can be saved: " + brandname + " " + productname);
+	    }
+	});
+    }
+    else{
+	res.send("All fields are required");
+    }
+    
 };
 
+//view everything stored in the database
 ProductController.showAllProducts = function(req, res){
     Product.find(function (err, products) {
       if (err) {
@@ -34,82 +45,111 @@ ProductController.showAllProducts = function(req, res){
    });
 };
 
-ProductController.findProductByBrand = function(req, res){
-    var brandname = req.params.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
+//finds products based on search criteria
+ProductController.findProduct = function(req, res){
+    var brandname = req.body.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
     var re_brandname = new RegExp('^'+brandname); //for partial match
-
-    Product.find({ brandname_stripped: re_brandname }, function (err, products) {
-        if (err) {
-            res.send('bad news: '+err.message);
-        }
-        else {
-            res.send(products);
-        }
-    });
-};
-
-ProductController.findProductByName = function(req, res){
-    var productname = req.params.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
-    /*TODO: This is not a good convention to use for searching. */
+    var productname = req.body.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
     var re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"); //for partial match
-
-    Product.find({ productname_stripped: re_productname }, function (err, products) {
-	if (err) {
-            res.send('bad news: '+err.message);
-	}
-	else{
-            res.send(products);
-	}
-    });
-};
-
-ProductController.findProductByBrandAndType = function(req, res){
-    var brandname = req.params.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
-    var re_brandname = new RegExp('^'+brandname); //for partial match
-    var productname = req.params.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
-    /*TODO: This is not a good convention to use for searching. */
-    var re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"); //for partial match
-
-    Product.find({brandname_stripped: re_brandname, productname_stripped: re_productname}, function(err, products){
-	if(err){
-	    res.send('bad news: ' + err.message);
-	}
-	else{
-	    res.send(products);
-	}
-    });
-};
-
-ProductController.findProductByIngredient = function(req, res){
-    var ingredient = req.params.ingredient.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredient  
+    var ingredient = req.body.ingredient.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredient  
     var re_ingredient = new RegExp("(\\s|^)" + ingredient + "(\\s|$)", "i"); //for partial match
-    
-    Product.find({ingredients_stripped : re_ingredient}, function(err, products){
-	if(err){
-	    res.send('bad news: ' + err.message);
+
+
+    //if brandname
+    if(brandname !== ""){
+	//if brand name and product name
+	if(productname !== ""){
+	    //check if brand name, product name, and ingredient
+	    if(ingredient !== ""){
+		Product.find({brandname_stripped : re_brandname, productname_stripped: re_productname, ingredients_stripped : re_ingredient}, function(err, products){
+		    if(err){
+			res.send('bad news: ' + err.message);
+		    }
+		    else{
+			res.send(products);
+		    }
+		});
+	    }
+	    //only brand name and product name
+	    else{
+		Product.find({brandname_stripped: re_brandname, productname_stripped: re_productname}, function(err, products){
+		    if(err){
+			res.send('bad news: ' + err.message);
+		    }
+		    else{
+			res.send(products);
+		    }
+		});
+	    }
 	}
+	//if brand name (without product name)
 	else{
-	    res.send(products);
-	}
-    });
-};
+	    //check if brand name and ingredient
+	    if(ingredient !== ""){
+		Product.find({brandname_stripped : re_brandname, ingredients_stripped : re_ingredient}, function(err, products){
+		    if(err){
+			res.send('bad news: ' + err.message);
+		    }
+		    else{
+			res.send(products);
+		    }
+		});
+	    }
+	    //only brand name
+	    else{
+		Product.find({ brandname_stripped: re_brandname }, function (err, products) {
+		    if (err) {
+			res.send('bad news: '+err.message);
+		    }
+		    else {
+			res.send(products);
+		    }
+		});
 
-
-ProductController.findProductByTypeAndIngredient = function(req, res){
-    var ingredient = req.params.ingredient.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredient  
-    var re_ingredient = new RegExp("(\\s|^)" + ingredient + "(\\s|$)", "i"); //for partial match
-    var productname = req.params.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
-    var re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"); //for partial match
-    
-    Product.find({productname_stripped : re_productname, ingredients_stripped : re_ingredient}, function(err, products){
-	if(err){
-	    res.send('bad news: ' + err.message);
+	    }
 	}
+    }
+    //if only product name, no brand name
+    else if (productname !== ""){
+	//if product name and ingredient
+	if (ingredient !== ""){
+	    Product.find({productname_stripped : re_productname, ingredients_stripped : re_ingredient}, function(err, products){
+		if(err){
+		    res.send('bad news: ' + err.message);
+		}
+		else{
+		    res.send(products);
+		}
+	    });
+	}
+	//if only product name
 	else{
-	    res.send(products);
+	    Product.find({ productname_stripped: re_productname }, function (err, products) {
+		if (err) {
+		    res.send('bad news: '+err.message);
+		}
+		else{
+		    res.send(products);
+		}
+	    });
 	}
-    });
-};
+    }
+    //if only ingredient
+    else if (ingredient !== ""){
+	Product.find({ingredients_stripped : re_ingredient}, function(err, products){
+	    if(err){
+		res.send('bad news: ' + err.message);
+	    }
+	    else{
+		res.send(products);
+	    }
+	});
+    }
 
+    else{
+	res.send("please enter a value to search");
+    }
+ 
+};
 
 module.exports = ProductController;

@@ -21,14 +21,17 @@ block content
     
     div.span12
       h4 Contribute Product Ingredients
-      form
+      form(method='post',action='')
+        label Brand Name
+        input(type='text', name='brandname')
+
         label Product Name
-        input(type="text")
+        input(type='text', name='productname')
         
         label Ingredients
-        textarea(rows='5')
+        textarea(rows='5', name='ingredients')
         p
-        a.btn Submit          
+        input(type='submit', name='contribute', value='Contribute').a.btn          
 
       hr
     

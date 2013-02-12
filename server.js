@@ -64,14 +64,10 @@ app.get('/search', routes.search);
 app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
-
 app.get('/allproducts', ProductController.showAllProducts);
-app.get('/brandsearch/:brandname', ProductController.findProductByBrand);
-app.get('/typesearch/:productname', ProductController.findProductByName);
-app.get('/combosearch/:brandname/:productname', ProductController.findProductByBrandAndType);
-app.get('/save/:brandname/:productname/:ingredients',ProductController.save);
-app.get('/ingredientsearch/:ingredient',ProductController.findProductByIngredient);
-app.get('/ingredientsearchwithtype/:productname/:ingredient',ProductController.findProductByTypeAndIngredient);
+
+app.post('/search', ProductController.findProduct);
+app.post('/contribute', ProductController.saveProduct);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
