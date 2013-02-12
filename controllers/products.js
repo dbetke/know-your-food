@@ -28,6 +28,8 @@ ProductController.saveProduct = function(req, res)  {
 		res.send("Oops.  This product already exists");
 	    }
 	    else{
+
+		//create the new product
 		var newProduct = new Product({
 		    'brandname' : brandname,
 		    'brandname_stripped' : brandname_stripped,
@@ -37,11 +39,13 @@ ProductController.saveProduct = function(req, res)  {
 		    'ingredients_stripped' : ingredients_stripped_array
 		});
 
+		//save the new product to the database
 		newProduct.save(function (err, newProduct) {
 		    if (err){
 			res.send(err);
 		    }
 		    else{
+			//send confirmation that product was saved
 			res.send("The following was written to the database: \n" + newProduct);
 		    }
 		});
@@ -74,7 +78,6 @@ ProductController.findProduct = function(req, res){
     var re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"); //for partial match
     var ingredient = req.body.ingredient.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredient  
     var re_ingredient = new RegExp("(\\s|^)" + ingredient + "(\\s|$)", "i"); //for partial match
-
 
     //if brandname
     if(brandname !== ""){
