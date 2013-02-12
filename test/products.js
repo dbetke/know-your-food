@@ -1,145 +1,59 @@
-var Product = require('../models/product');
+var mongoose = require('mongoose'),
+    Product = require('../models/product'),
+    ProductController = require('../controllers/products'),
+    assert = require('assert'),
+    should = require('should');
 
-var NewProduct = new Product(
+mongoose.connect('mongodb://localhost/product_test');
 
- 			     {'brandname'           : 'Progresso', 
-			      'brandname_stripped'  : 'Progresso',
- 			      'productname'         : 'Vegetable Classics Creamy Mushroom', 
-			      'productname_stripped': 'Vegetable Classics Creamy Mushroom',
- 			      'ingredients'         : ['water',
- 					               'portabella mushrooms', 
- 					               'soybean oil', 
- 					               'modified food starch', 
- 					               'cream', 
-						       'soy protein concentrate', 
-						       'mushroom extract', 
-						       'salt', 
-						       'butter', 
-						       'sugar', 
-						       'sodium phosphate', 
-						       'modified whey protein concentrate', 
-						       'dried parsley', 
-						       'onion powder', 
-						       'garlic powder', 
-						       'yeast extract', 
-						       'spice'],
- 			      'ingredients_stripped': ['water',
- 					               'portabella mushrooms', 
- 					               'soybean oil', 
- 					               'modified food starch', 
- 					               'cream', 
-						       'soy protein concentrate', 
-						       'mushroom extract', 
-						       'salt', 
-						       'butter', 
-						       'sugar', 
-						       'sodium phosphate', 
-						       'modified whey protein concentrate', 
-						       'dried parsley', 
-						       'onion powder', 
-						       'garlic powder', 
-						       'yeast extract', 
-						       'spice']
+describe('ProductController', function(){
+    var test_brandname = 'Some Brand';
+    var test_productname = 'Some Product';
+    var test_ingredients = 'Ingredient1, Ingredient2';
+    
+    var brandname = test_brandname.toUpperCase();
+    var brandname_stripped = test_brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name                                  
+    var productname = test_productname.toUpperCase();
+    var productname_stripped = test_productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name                            
+    var ingredients = test_ingredients.toLowerCase();
+    var ingredients_stripped = test_ingredients.toLowerCase().replace(/['";:.\/?\\-]/g, ''); //strips all punctuation from ingredients except commas                
 
+    //parse ingredients by commas and store in array                                                                                                                    
+    var ingredients_array = ingredients.split(',');
+    var ingredients_stripped_array = ingredients_stripped.split(',');
 
- 			     }
-);
+    describe('#saveProduct()', function(){
+	it('saves a new product', function(done){                                                                                                                                                
+	    //create the new product                                                                                                                               
+            var newProduct = new Product({
+		'brandname' : brandname,
+		'brandname_stripped' : brandname_stripped,
+		'productname' : productname,
+		'productname_stripped' : productname_stripped,
+		'ingredients' : ingredients_array,
+		'ingredients_stripped' : ingredients_stripped_array
+	    });
+	    
+            //save the new product to the database                                                                                                                  
+		newProduct.save(function (err, newProduct) {
+		    if(err){
+			return done(err);
+		    }
+		    else{
+			done();
+		    }
+		});
+	});
 
-var NewProduct2 = new Product(
-			     {'brandname'           : 'Campbell\'s',
-			      'brandname_stripped'  : 'Campbells',
-			      'productname'         : 'Cream of Mushroom Soup',
-			      'productname_stripped': 'Cream of Mushroom Soup',
-			      'ingredients'         : ['water', 
-						       'mushrooms',
-						       'Modified Food Starch',      
-						       'wheat flour',      
-						       'salt',      
-						       'cream',      
-						       'dried whey',      
-						       'Monosodium Glutamate',      
-						       'soy protein concentrate',      
-						       'yeast extract',      
-						       'spice extract',      
-						       'dehydrated garlic',      
-						       'vegetable oil'],
-			      'ingredients_stripped': ['water', 
-						       'mushrooms',
-						       'Modified Food Starch',      
-						       'wheat flour',      
-						       'salt',      
-						       'cream',      
-						       'dried whey',      
-						       'Monosodium Glutamate',      
-						       'soy protein concentrate',      
-						       'yeast extract',      
-						       'spice extract',      
-						       'dehydrated garlic',      
-						       'vegetable oil']
-
-			     } 
-);
-
-var NewProduct3 = new Product(
-                             {'brandname'           : 'Amy\'s', 
-			      'brandname_stripped'  : 'Amys',
-			      'productname'         : 'Cream of Mushroom Soup',
-			      'productname_stripped': 'Cream of Mushroom Soup',
-			      'ingredients' : ['filtered water',      
-					       'organic mushrooms',      
-					       'organic onions',      
-					       'organic wheat flour',      
-					       'organic high oleic safflower and/or sunflower oil',      
-					       'organic leeks',      
-					       'organic grade AA butter (cream, salt, annatto [color])',      
-					       'organic cream',      
-					       'spices (100% pure herbs & spices (no hidden ingredients))',      
-					       'sea salt',      
-					       'organic garlic',      
-					       'organic black pepper'],
-			      'ingredients_stripped' : ['filtered water',      
-					       'organic mushrooms',      
-					       'organic onions',      
-					       'organic wheat flour',      
-					       'organic high oleic safflower and or sunflower oil',      
-					       'organic leeks',      
-					       'organic grade AA butter cream salt annatto color)',      
-					       'organic cream',      
-					       'spices 100 pure herbs spices no hidden ingredients',      
-					       'sea salt',      
-					       'organic garlic',      
-					       'organic black pepper'] 
-
-			     }
-);
-
-NewProduct.save(function (err, newProduct) {
-   if (err){ 
-      console.log(err);
-   }
-   else{
-      console.log("The following was written to the database: \n" + newProduct);
-   }
+	it('verifies matching product does not exist', function(done){
+	    Product.find({brandname_stripped: brandname_stripped, productname_stripped: productname_stripped}, function(err, products){
+		if(err){
+                    return done(err);
+		}
+		else if (products != ""){
+                    done();
+		}
+	    });
+	});
+    });
 });
-
-NewProduct2.save(function (err, newProduct) {
-   if (err){ 
-      console.log(err);
-   }
-   else{
-      console.log("The following was written to the database: \n" + newProduct);
-   }
-});
-
-NewProduct3.save(function (err, newProduct) {
-   if (err){ 
-      console.log(err);
-   }
-   else{
-      console.log("The following was written to the database: \n" + newProduct);
-   }
-});
-
-module.exports = NewProduct;
-module.exports = NewProduct2;
-module.exports = NewProduct3;
