@@ -2,7 +2,6 @@ var Product = require('../models/product');
 
 var ProductController = { };
 
-/* TODO: Use save function to save to database - currently only writing to the screen for testing */
 ProductController.saveProduct = function(req, res)  {
     var brandname = req.body.brandname.toUpperCase();
     var brandname_stripped = req.body.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
@@ -160,6 +159,7 @@ ProductController.findProduct = function(req, res){
     }
     //if only ingredient
     else if (ingredient !== ""){
+	//TODO: Remove this from production
 	Product.find({ingredients_stripped : re_ingredient}, function(err, products){
 	    if(err){
 		res.send('bad news: ' + err.message);

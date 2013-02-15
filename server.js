@@ -26,26 +26,6 @@ db.once('open', function callback () {
   console.log("mongodb is connected!!");
 });
 
-
-/*USING FOR TESTING ONLY*/
-//var NewProduct = require('./test/products');
-//var NewProduct2 = require('./test/products');
-//var NewProduct3 = require('./test/products');
-
-/*
-//BUILDS THE NEW PRODUCT DOCUMENT
-var newProduct = new Product({'brandname' : 'Progresso', 'productname' : 'Vegetable Classics Creamy Mushroom', 'ingredients' : ['water','portabella mushrooms', 'soybean oil', 'modified food starch', 'cream', 'soy protein concentrate', 'mushroom extract', 'salt', 'butter', 'sugar', 'sodium phosphate', 'modified whey protein concentrate', 'dried parsley', 'onion powder', 'garlic powder', 'yeast extract', 'spice']});
-*/
-
-/*
-//INSERTS THE NEW PRODUCT INTO THE DATABASE COLLECTION
-newProduct.save(function (err, newProduct) {
-  if (err) 
-    console.log(err);
-  console.log("The following was written to the database: \n" + newProduct);
-});
-*/
-
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -64,7 +44,8 @@ app.get('/search', routes.search);
 app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
-app.get('/allproducts', ProductController.showAllProducts);
+
+app.get('/allproducts', ProductController.showAllProducts); //for testing
 
 app.post('/search', ProductController.findProduct);
 app.post('/contribute', ProductController.saveProduct);
