@@ -32,7 +32,7 @@ describe('ProductController', function(){
 
     //SAVE PRODUCT
     describe('#saveProduct()', function(){
-	it('saves some new products', function(done){ 
+	it('should save some new products', function(done){ 
 	    for (var i=0; i<testProductLength; i++){
 		brandname = test_brandname[i].toUpperCase();
 		brandname_stripped = test_brandname[i].toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name                                  
@@ -65,12 +65,22 @@ describe('ProductController', function(){
 	    done();
 	});
 	
-	it('verifies matching product does not exist', function(done){
+	//TODO:  Fix this test - currently when breaking it, it times out instead of sending the message
+	it('should require all fields', function(done){
+	    if((brandname != null) && (productname != null) && (ingredients != null)){
+		done();
+	    }
+	    else{
+		return('Missing required data');
+	    }
+	});
+
+	it('should verify  matching product does not exist', function(done){
 	    Product.find({brandname_stripped: brandname_stripped, productname_stripped: productname_stripped}, function(err, products){
 		if(err){
 		    return done(err);
 		}
-		else if (products != ""){
+		else if (products != ""){ //product should exist in this case
 		    done();
 		}
 	    });
@@ -80,7 +90,7 @@ describe('ProductController', function(){
 
     //FIND PRODUCT
     describe('#findProduct()', function(){
-	it('searches for product by brand, name, and ingredient', function(done){
+	it('should search for product by brand, name, and ingredient', function(done){
 	    Product.find({brandname_stripped: brandname_stripped, productname_stripped : productname_stripped, ingredients_stripped : ingredients_stripped}, function(err, products){
                 if(err){
                     return done(err);
@@ -91,7 +101,7 @@ describe('ProductController', function(){
             });
 	});
 	
-	it('searches for product by brand and ingredient', function(done){
+	it('should search for product by brand and ingredient', function(done){
 	    Product.find({brandname_stripped: brandname_stripped, ingredients_stripped : ingredients_stripped}, function(err, products){
                 if(err){
                     return done(err);
@@ -103,7 +113,7 @@ describe('ProductController', function(){
 
 	});
 
-	it('searches for product by name and ingredient', function(done){
+	it('should search for product by name and ingredient', function(done){
 	    Product.find({productname_stripped : productname_stripped, ingredients_stripped : ingredients_stripped}, function(err, products){
                 if(err){
                     return done(err);
@@ -115,7 +125,7 @@ describe('ProductController', function(){
 
 	});
 
-	it('searches for product by brand and name', function(done){
+	it('should search for product by brand and name', function(done){
 	    Product.find({brandname_stripped: brandname_stripped, productname_stripped : productname_stripped}, function(err, products){
                 if(err){
                     return done(err);
@@ -127,7 +137,7 @@ describe('ProductController', function(){
 
 	});
 
-	it('searches for product by brand name', function(done){
+	it('should search for product by brand name', function(done){
 	    Product.find({brandname_stripped: brandname_stripped}, function(err, products){
                 if(err){
                     return done(err);
@@ -139,7 +149,7 @@ describe('ProductController', function(){
 
 	});
 
-	it('searches for product by name', function(done){
+	it('should search for product by name', function(done){
 	    Product.find({productname_stripped: productname_stripped}, function(err, products){
                 if(err){
                     return done(err);
@@ -151,7 +161,7 @@ describe('ProductController', function(){
 
 	});
 
-	it('searches for product by ingredient', function(done){
+	it('should search for product by ingredient', function(done){
 	    //Note: Do not want this functionality in production
 	    Product.find({ingredients_stripped : ingredients_stripped}, function(err, products){
                 if(err){
