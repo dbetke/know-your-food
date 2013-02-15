@@ -176,4 +176,60 @@ ProductController.findProduct = function(req, res){
  
 };
 
+//TODO: THIS METHOD IS TO SAVE PRODUCTS FROM THE SCRIPT FILE RATHER THAN THE WEB PAGE. NOT SURE IF THIS IS THE BEST WAY TO HANDLE 
+ProductController.saveProducts = function(req, res)  {
+    var brandname = req.brandname.toUpperCase();
+    var brandname_stripped = req.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
+    var productname = req.productname.toUpperCase();
+    var productname_stripped = req.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
+    var ingredients = req.ingredients.toLowerCase();
+    var ingredients_stripped = req.ingredients.toLowerCase().replace(/['";:.\/?\\-]/g, ''); //strips all punctuation from ingredients except commas
+    
+    //parse ingredients by commas and store in array
+    var ingredients_array = ingredients.split(',');
+    var ingredients_stripped_array = ingredients_stripped.split(',');
+
+
+    //require all fields
+    if ((brandname != "") && (productname != "") && (ingredients != "")){
+	
+	//Test if product already exists
+	Product.find({brandname_stripped: brandname_stripped, productname_stripped: productname_stripped}, function(err, products){
+	    if(err){
+		console.log('bad news: ' + err.message);
+	    }
+	    else if (products != ""){
+		console.log("Oops.  This product already exists");
+	    }
+	    else{
+
+		//create the new product
+		var newProduct = new Product({
+		    'brandname' : brandname,
+		    'brandname_stripped' : brandname_stripped,
+		    'productname' : productname,
+		    'productname_stripped' : productname_stripped,
+		    'ingredients' : ingredients_array,
+		    'ingredients_stripped' : ingredients_stripped_array
+		});
+
+		//save the new product to the database
+		newProduct.save(function (err, newProduct) {
+		    if (err){
+			console.log(err);
+		    }
+		    else{
+			//send confirmation that product was saved
+			console.log("The following was written to the database: \n" + newProduct);
+		    }
+		});
+	    }
+	});
+    }
+    else{
+	console.log("All fields are required");
+    }
+    
+};
+
 module.exports = ProductController;
