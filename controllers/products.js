@@ -76,7 +76,7 @@ ProductController.findProduct = function(req, res){
     var productname = req.body.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
     var re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"); //for partial match
     var ingredient = req.body.ingredient.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredient  
-    var re_ingredient = new RegExp("(\\s|^)" + ingredient + "(\\s|$)", "i"); //for partial match
+    var re_ingredient = new RegExp(ingredient, "i"); //for partial match
 
     //if brandname
     if(brandname !== ""){
