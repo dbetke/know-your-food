@@ -4,11 +4,11 @@ var ProductController = { };
 
 ProductController.saveProduct = function(req, res)  {
     var brandname = req.body.brandname.toUpperCase();
-    var brandname_stripped = req.body.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
+    var brandname_stripped = ProductController.strip(brandname);
     var productname = req.body.productname.toUpperCase();
-    var productname_stripped = req.body.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
+    var productname_stripped = ProductController.strip(productname);
     var ingredients = req.body.ingredients.toLowerCase();
-    var ingredients_stripped = req.body.ingredients.toLowerCase().replace(/['";:.\/?\\-]/g, ''); //strips all punctuation from ingredients except commas
+    var ingredients_stripped = ProductController.strip(ingredients);
     
     //parse ingredients by commas and store in array
     var ingredients_array = ingredients.split(',');
@@ -27,7 +27,7 @@ ProductController.saveProduct = function(req, res)  {
 		res.send("Oops.  This product already exists");
 	    }
 	    else{
-
+		
 		//create the new product
 		var newProduct = new Product({
 		    'brandname' : brandname,
@@ -37,7 +37,7 @@ ProductController.saveProduct = function(req, res)  {
 		    'ingredients' : ingredients_array,
 		    'ingredients_stripped' : ingredients_stripped_array
 		});
-
+		
 		//save the new product to the database
 		newProduct.save(function (err, newProduct) {
 		    if (err){
@@ -54,7 +54,11 @@ ProductController.saveProduct = function(req, res)  {
     else{
 	res.send("All fields are required");
     }
-    
+};
+
+ProductController.strip = function(req, res){
+    //strip all punctuation except commas  
+    return req.replace(/['";:.\/?\\-]/g, ''); 
 };
 
 //view everything stored in the database
