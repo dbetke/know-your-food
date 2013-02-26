@@ -22,37 +22,68 @@ describe('ProductController', function(){
     
     var testProductLength = test_brandname.length;
 
-    var brandname;
-    var brandname_stripped;
-    var productname;
-    var productname_stripped;
-    var ingredients;
-    var ingredients_stripped;
+    var brandname = []
+    var brandname_stripped = []
+    var productname = []
+    var productname_stripped = []
+    var ingredients = []
+    var ingredients_stripped = []
 
-
+    function strip(item){
+        return item.replace(/['";:.\/?\\-]/g, '');
+    };
+	
     //SAVE PRODUCT
     describe('#saveProduct()', function(){
-	it('should save some new products', function(done){ 
+
+	it('should strip punctuation for key fields', function(){
+	    
 	    for (var i=0; i<testProductLength; i++){
-		brandname = test_brandname[i].toUpperCase();
-		brandname_stripped = test_brandname[i].toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name                                  
-		productname = test_productname[i].toUpperCase();
-		productname_stripped = test_productname[i].toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name                            
-		ingredients = test_ingredients[i].toLowerCase();
-		ingredients_stripped = test_ingredients[i].toLowerCase().replace(/['";:.\/?\\-]/g, ''); //strips all punctuation from ingredients except commas        
-		
+		brandname.push(test_brandname[i].toUpperCase());//.toUpperCase();
+		brandname_stripped.push(strip(brandname[i]));
+		productname.push(test_productname[i].toUpperCase());
+		productname_stripped.push(strip(productname[i]));
+		ingredients.push(test_ingredients[i].toLowerCase());
+		ingredients_stripped.push(strip(ingredients[i]));
+	    }
+
+	    brandname[1].should.equal("AMY\'S");
+	    brandname[1].should.not.equal("amy\'s");
+	    brandname_stripped[1].should.equal("AMYS");
+	    brandname_stripped[1].should.not.equal("AMY\'s");
+	    
+	});
+
+	it('should require all fields', function(){	    
+	    brandname[1].should.not.equal("");
+	    productname[1].should.not.equal("");
+	    ingredients[1].should.not.equal("");
+	});
+
+
+	it('should verify matching product does not already exist before saving', function(){
+	    Product.find({brandname_stripped: brandname_stripped[1], productname_stripped: productname_stripped[1]}, function(err, products){
+		products.should.not.exist;
+		if (err) throw err;
+	    });
+
+	});
+
+	it('should save the new products', function(done){ 
+	 
+	    for(var i=0; i<testProductLength; i++){
 		//parse ingredients by commas and store in array                                                                                                                    
 		var ingredients_array = ingredients[i].split(',');
 		var ingredients_stripped_array = ingredients_stripped[i].split(',');
-	        
+	
 		//create the new product                                                                                                                               
 		var newProduct = new Product({
-		    'brandname' : brandname,
-		    'brandname_stripped' : brandname_stripped,
-		    'productname' : productname,
-		    'productname_stripped' : productname_stripped,
-		    'ingredients' : ingredients_array,
-		    'ingredients_stripped' : ingredients_stripped_array
+		    'brandname' : brandname[i],
+		    'brandname_stripped' : brandname_stripped[i],
+		    'productname' : productname[i],
+		    'productname_stripped' : productname_stripped[i],
+		    'ingredients' : ingredients_array[i],
+		    'ingredients_stripped' : ingredients_stripped_array[i]
 		});
 		
 		newProduct.save(function (err, newProduct) {
@@ -61,31 +92,10 @@ describe('ProductController', function(){
 		    }
 		});
 	    }
-	    
+
 	    done();
 	});
 	
-	//TODO:  Fix this test - currently when breaking it, it times out instead of sending the message
-	it('should require all fields', function(done){
-	    if((brandname != null) && (productname != null) && (ingredients != null)){
-		done();
-	    }
-	    else{
-		return('Missing required data');
-	    }
-	});
-
-	it('should verify  matching product does not exist', function(done){
-	    Product.find({brandname_stripped: brandname_stripped, productname_stripped: productname_stripped}, function(err, products){
-		if(err){
-		    return done(err);
-		}
-		else if (products != ""){ //product should exist in this case
-		    done();
-		}
-	    });
-	});
- 	
     });    
 
     //FIND PRODUCT
