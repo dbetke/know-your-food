@@ -1,6 +1,10 @@
 var ProductController = function(){ 
     var Product = require('../models/product');
 
+    function strip(item){
+	return item.replace(/['";:.\/?\\-]/g, '');
+    };
+
     //view everything stored in the database
     this.showAllProducts = function(req, res){
 	Product.find(function (err, products) {
@@ -12,14 +16,14 @@ var ProductController = function(){
 	    }
 	});
     };
-    
+
     this.saveProduct = function(req, res)  {
 	var brandname = req.body.brandname.toUpperCase();
-	var brandname_stripped = ProductController.strip(brandname);
+	var brandname_stripped = strip(brandname);
 	var productname = req.body.productname.toUpperCase();
-	var productname_stripped = ProductController.strip(productname);
+	var productname_stripped = strip(productname);
 	var ingredients = req.body.ingredients.toLowerCase();
-	var ingredients_stripped = ProductController.strip(ingredients);
+	var ingredients_stripped = strip(ingredients);
 	
 	//parse ingredients by commas and store in array
 	var ingredients_array = ingredients.split(',');
@@ -67,18 +71,13 @@ var ProductController = function(){
 	}
     };
     
-    this.strip = function(req, res){
-	//strip all punctuation except commas  
-	return req.replace(/['";:.\/?\\-]/g, ''); 
-    };
-    
     //finds products based on search criteria
     this.findProduct = function(req, res){
-	var brandname = req.body.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
+	var brandname = strip(req.body.brandname.toUpperCase());
 	var re_brandname = new RegExp('^'+brandname); //for partial match
-	var productname = req.body.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
+	var productname = strip(req.body.productname.toUpperCase());
 	var re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"); //for partial match
-	var ingredient = req.body.ingredient.toLowerCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from ingredient  
+	var ingredient = strip(req.body.ingredient.toLowerCase());
 	var re_ingredient = new RegExp(ingredient, "i"); //for partial match
 	
 	//if brandname
@@ -182,11 +181,11 @@ var ProductController = function(){
     //TODO: THIS METHOD IS TO SAVE PRODUCTS FROM THE SCRIPT FILE RATHER THAN THE WEB PAGE. NOT SURE IF THIS IS THE BEST WAY TO HANDLE 
     this.saveProducts = function(req, res)  {
 	var brandname = req.brandname.toUpperCase();
-	var brandname_stripped = req.brandname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from brand name  
+	var brandname_stripped = strip(req.brandname.toUpperCase());
 	var productname = req.productname.toUpperCase();
-	var productname_stripped = req.productname.toUpperCase().replace(/['";:,.\/?\\-]/g, ''); //strips all punctuation from product name
+	var productname_stripped = strip(req.productname.toUpperCase()); 
 	var ingredients = req.ingredients.toLowerCase();
-	var ingredients_stripped = req.ingredients.toLowerCase().replace(/['";:.\/?\\-]/g, ''); //strips all punctuation from ingredients except commas
+	var ingredients_stripped = strip(req.ingredients.toLowerCase());
 	
 	//parse ingredients by commas and store in array
 	var ingredients_array = ingredients.split(',');
