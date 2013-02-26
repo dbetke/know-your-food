@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -17,6 +16,7 @@ var Product = require('./models/product'); // require model, pull in product mod
 
 //Controllers
 var ProductController = require('./controllers/products');
+var pc = new ProductController();
 
 mongoose.connect('mongodb://localhost/Products') // will create the Products database if it doesn't already exist.
 
@@ -45,10 +45,10 @@ app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 
-app.get('/allproducts', ProductController.showAllProducts); //for testing
+app.get('/allproducts', pc.showAllProducts); //for testing
 
-app.post('/search', ProductController.findProduct);
-app.post('/contribute', ProductController.saveProduct);
+app.post('/search', pc.findProduct);
+app.post('/contribute', pc.saveProduct);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
