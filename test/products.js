@@ -30,7 +30,7 @@ describe('ProductController', function(){
     var ingredients_stripped = []
 
     function strip(item){
-        return item.replace(/['";:.\/?\\-]/g, '');
+        return item.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
     };
 	
     //SAVE PRODUCT
@@ -50,6 +50,7 @@ describe('ProductController', function(){
 	    brandname[1].should.equal("AMY\'S");
 	    brandname[1].should.not.equal("amy\'s");
 	    brandname_stripped[1].should.equal("AMYS");
+	    brandname_stripped[1].should.not.equal("AMYS ");
 	    brandname_stripped[1].should.not.equal("AMY\'s");
 	    
 	});
@@ -82,8 +83,8 @@ describe('ProductController', function(){
 		    'brandname_stripped' : brandname_stripped[i],
 		    'productname' : productname[i],
 		    'productname_stripped' : productname_stripped[i],
-		    'ingredients' : ingredients_array[i],
-		    'ingredients_stripped' : ingredients_stripped_array[i]
+		    'ingredients' : ingredients_array,
+		    'ingredients_stripped' : ingredients_stripped_array
 		});
 		
 		newProduct.save(function (err, newProduct) {
@@ -101,7 +102,7 @@ describe('ProductController', function(){
     //FIND PRODUCT
     describe('#findProduct()', function(){
 	it('should search for product by brand, name, and ingredient', function(done){
-	    Product.find({brandname_stripped: brandname_stripped, productname_stripped : productname_stripped, ingredients_stripped : ingredients_stripped}, function(err, products){
+	    Product.find({brandname_stripped: brandname_stripped[0], productname_stripped : productname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
@@ -112,7 +113,7 @@ describe('ProductController', function(){
 	});
 	
 	it('should search for product by brand and ingredient', function(done){
-	    Product.find({brandname_stripped: brandname_stripped, ingredients_stripped : ingredients_stripped}, function(err, products){
+	    Product.find({brandname_stripped: brandname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
@@ -124,7 +125,7 @@ describe('ProductController', function(){
 	});
 
 	it('should search for product by name and ingredient', function(done){
-	    Product.find({productname_stripped : productname_stripped, ingredients_stripped : ingredients_stripped}, function(err, products){
+	    Product.find({productname_stripped : productname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
@@ -136,7 +137,7 @@ describe('ProductController', function(){
 	});
 
 	it('should search for product by brand and name', function(done){
-	    Product.find({brandname_stripped: brandname_stripped, productname_stripped : productname_stripped}, function(err, products){
+	    Product.find({brandname_stripped: brandname_stripped[0], productname_stripped : productname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
@@ -148,7 +149,7 @@ describe('ProductController', function(){
 	});
 
 	it('should search for product by brand name', function(done){
-	    Product.find({brandname_stripped: brandname_stripped}, function(err, products){
+	    Product.find({brandname_stripped: brandname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
@@ -160,7 +161,7 @@ describe('ProductController', function(){
 	});
 
 	it('should search for product by name', function(done){
-	    Product.find({productname_stripped: productname_stripped}, function(err, products){
+	    Product.find({productname_stripped: productname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
@@ -173,7 +174,7 @@ describe('ProductController', function(){
 
 	it('should search for product by ingredient', function(done){
 	    //Note: Do not want this functionality in production
-	    Product.find({ingredients_stripped : ingredients_stripped}, function(err, products){
+	    Product.find({ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
