@@ -91,10 +91,6 @@ describe('ProductController', function(){
 		    if(err){
 			return err;
 		    }
-		    else{
-			//console.log(newProduct);
-		    }
-
 		});
 	    }
 
@@ -105,90 +101,90 @@ describe('ProductController', function(){
 
     //FIND PRODUCT
     describe('#findProduct()', function(){
-	it('should search for product by brand, name, and ingredient', function(done){
+	it('should search for product by brand, name, and ingredient', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0], productname_stripped : productname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 	});
 	
-	it('should search for product by brand and ingredient', function(done){
+	it('should search for product by brand and ingredient', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by name and ingredient', function(done){
+	it('should search for product by name and ingredient', function(){
 	    Product.find({productname_stripped : productname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by brand and name', function(done){
+	it('should search for product by brand and name', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0], productname_stripped : productname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by brand name', function(done){
+	it('should search for product by brand name', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by name', function(done){
+	it('should search for product by name', function(){
 	    Product.find({productname_stripped: productname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by ingredient', function(done){
+	it('should search for product by ingredient', function(){
 	    //Note: Do not want this functionality in production
 	    Product.find({ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 	});
 
-	it('should search for product by not ingredient', function(done){
+	it('should search for product by not ingredient', function(){
             var re_ingredient = new RegExp('monosodium glutamate', "i");
 	    //Note: Do not want this functionality in production
 	    Product.find({ingredients_stripped : {$not : re_ingredient} }, function(err, products){
@@ -196,7 +192,7 @@ describe('ProductController', function(){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 	});
