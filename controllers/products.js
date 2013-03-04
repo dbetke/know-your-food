@@ -3,7 +3,8 @@ var ProductController = function () {
     var Product = require('../models/product');
 
     function strip(item) {
-        return item.replace(/['";:.\/?\\-\s]/g, '');
+	//strip all punctuation, leave whitespaces between words, strip whitespace at the beginning, strip whitespace at the end
+	return item.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
     }
 
     //view everything stored in the database
