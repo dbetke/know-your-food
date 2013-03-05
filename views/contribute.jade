@@ -23,13 +23,13 @@ block content
       h4 Contribute Product Ingredients
       form(method='post',action='')
         label Brand Name
-        input(type='text', name='brandname')
+        input(type='text', name='brandname', required)
 
         label Product Name
-        input(type='text', name='productname')
+        input(type='text', name='productname', required)
         
         label Ingredients
-        textarea(rows='5', name='ingredients')
+        textarea(rows='5', name='ingredients', required)
         p
         input(type='submit', name='contribute', value='Contribute').a.btn          
 
