@@ -11,6 +11,8 @@
       "mongodb"	  : "1.2.x",
       "mongoose"  : "3.5.x",
       "mocha"     : "1.8.x",
-      "should"    : "1.2.x"
+      "should"    : "1.2.x",
+      "nodemailer": "0.3.x"
+
   }
 }
