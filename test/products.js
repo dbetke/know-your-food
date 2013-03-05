@@ -30,7 +30,7 @@ describe('ProductController', function(){
     var ingredients_stripped = []
 
     function strip(item){
-        return item.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
+        return item.replace().replace(/[^\w\s]|_/g, "").replace(/^\s+/, '').replace(/\s+$/, '');
     };
 	
     //SAVE PRODUCT
@@ -44,7 +44,7 @@ describe('ProductController', function(){
 		productname.push(test_productname[i].toUpperCase());
 		productname_stripped.push(strip(productname[i]));
 		ingredients.push(test_ingredients[i].toLowerCase());
-		ingredients_stripped.push(strip(ingredients[i]));
+		ingredients_stripped.push(ingredients[i].replace(/['";:.\/?\\-]/g, ''));
 	    }
 
 	    brandname[1].should.equal("AMY\'S");
@@ -76,7 +76,7 @@ describe('ProductController', function(){
 		//parse ingredients by commas and store in array                                                                                                                    
 		var ingredients_array = ingredients[i].split(',');
 		var ingredients_stripped_array = ingredients_stripped[i].split(',');
-	
+		
 		//create the new product                                                                                                                               
 		var newProduct = new Product({
 		    'brandname' : brandname[i],
@@ -101,88 +101,103 @@ describe('ProductController', function(){
 
     //FIND PRODUCT
     describe('#findProduct()', function(){
-	it('should search for product by brand, name, and ingredient', function(done){
+	it('should search for product by brand, name, and ingredient', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0], productname_stripped : productname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 	});
 	
-	it('should search for product by brand and ingredient', function(done){
+	it('should search for product by brand and ingredient', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by name and ingredient', function(done){
+	it('should search for product by name and ingredient', function(){
 	    Product.find({productname_stripped : productname_stripped[0], ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by brand and name', function(done){
+	it('should search for product by brand and name', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0], productname_stripped : productname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by brand name', function(done){
+	it('should search for product by brand name', function(){
 	    Product.find({brandname_stripped: brandname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by name', function(done){
+	it('should search for product by name', function(){
 	    Product.find({productname_stripped: productname_stripped[0]}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 
 	});
 
-	it('should search for product by ingredient', function(done){
+	it('should search for product by ingredient', function(){
 	    //Note: Do not want this functionality in production
 	    Product.find({ingredients_stripped : 'water'}, function(err, products){
                 if(err){
                     return done(err);
                 }
                 else{
-                    done();
+                   products.length.should.not.equal(0);
                 }
             });
 	});
+
+	it('should search for product by not ingredient', function(){
+            var re_ingredient = new RegExp('monosodium glutamate', "i");
+	    //Note: Do not want this functionality in production
+	    Product.find({ingredients_stripped : {$not : re_ingredient} }, function(err, products){
+                if(err){
+                    return done(err);
+                }
+                else{
+                   products.length.should.not.equal(0);
+                }
+            });
+	});
+
+
     });
 
     //CLEAR DATABASE AFTER TESTS ARE COMPLETE

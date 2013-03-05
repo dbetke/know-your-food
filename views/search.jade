@@ -31,9 +31,10 @@ block content
         label Ingredient
         input(type='text', name='ingredient', id='ingredient')
         
-        label Contains
-        input(type='checkbox') 
-        i Leave unchecked for results that do not contain specified ingredient
+        label 
+        input(type='checkbox', name='notIngredient', id='notIngredient')
+        nbsp 
+        i Check the box to search for products that do not contain specified ingredient
         p
         input(type='submit', name='search', value='Search').a.btn         
 

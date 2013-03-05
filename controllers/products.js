@@ -24,8 +24,9 @@ var ProductController = function () {
             re_brandname = new RegExp('^' + brandname), //for partial match
             productname = strip(req.body.productname.toUpperCase()),
             re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"), //for partial match
-            ingredient = strip(req.body.ingredient.toLowerCase()),
-            re_ingredient = new RegExp(ingredient, "i"); //for partial match
+	    ingredient = strip(req.body.ingredient.toLowerCase()),
+	    re_ingredient = new RegExp(ingredient, "i"),
+	    notIngredient = req.body.notIngredient; //for partial match
 
         //if brandname
         if (brandname !== "") {
@@ -33,13 +34,23 @@ var ProductController = function () {
             if (productname !== "") {
                 //check if brand name, product name, and ingredient
                 if (ingredient !== "") {
-                    Product.find({ brandname_stripped : re_brandname, productname_stripped : re_productname, ingredients_stripped : re_ingredient }, function (err, products) {
-                        if (err) {
-                            res.send(err);
-                        } else {
-                            res.send(products);
-                        }
-                    });
+		    if(notIngredient){
+			Product.find({ brandname_stripped : re_brandname, productname_stripped : re_productname, ingredients_stripped : { $not :  re_ingredient } }, function (err, products) {
+				if (err) {
+				    res.send(err);
+				} else {
+				    res.send(products);
+				}
+			    });
+		    } else {
+			Product.find({ brandname_stripped : re_brandname, productname_stripped : re_productname, ingredients_stripped : re_ingredient }, function (err, products) {
+				if (err) {
+				    res.send(err);
+				} else {
+				    res.send(products);
+				}
+			    });
+		    }
                 } else {//only brand name and product name
                     Product.find({ brandname_stripped: re_brandname, productname_stripped: re_productname }, function (err, products) {
                         if (err) {
@@ -52,13 +63,23 @@ var ProductController = function () {
             } else { //if brand name (without product name)
                 //check if brand name and ingredient
                 if (ingredient !== "") {
-                    Product.find({ brandname_stripped : re_brandname, ingredients_stripped : re_ingredient }, function (err, products) {
-                        if (err) {
-                            res.send(err);
-                        } else {
-                            res.send(products);
-                        }
-                    });
+		    if(notIngredient){
+			Product.find({ brandname_stripped : re_brandname, ingredients_stripped : { $not: re_ingredient } }, function (err, products) {
+				if (err) {
+				    res.send(err);
+				} else {
+				    res.send(products);
+				}
+			    });
+		    } else {
+			Product.find({ brandname_stripped : re_brandname, ingredients_stripped : re_ingredient }, function (err, products) {
+				if (err) {
+				    res.send(err);
+				} else {
+				    res.send(products);
+				}
+			    });
+		    }
                 } else { //only brand name
                     Product.find({ brandname_stripped : re_brandname }, function (err, products) {
                         if (err) {
@@ -72,13 +93,23 @@ var ProductController = function () {
         } else if (productname !== "") {//if only product name, no brand name
             //if product name and ingredient
             if (ingredient !== "") {
-                Product.find({ productname_stripped : re_productname, ingredients_stripped : re_ingredient }, function (err, products) {
-                    if (err) {
-                        res.send(err);
-                    } else {
-                        res.send(products);
-                    }
-                });
+		if(notIngredient){
+		    Product.find({ productname_stripped : re_productname, ingredients_stripped : { $not: re_ingredient} }, function (err, products) {
+			    if (err) {
+				res.send(err);
+			    } else {
+				res.send(products);
+			    }
+			});
+		} else {
+		    Product.find({ productname_stripped : re_productname, ingredients_stripped : re_ingredient }, function (err, products) {
+			    if (err) {
+				res.send(err);
+			    } else {
+				res.send(products);
+			    }
+			});
+		}
             } else { //if only product name
                 Product.find({ productname_stripped : re_productname }, function (err, products) {
                     if (err) {
@@ -89,14 +120,25 @@ var ProductController = function () {
                 });
             }
         } else if (ingredient !== "") { //if only ingredient
-            //TODO: Remove this from production
-            Product.find({ ingredients_stripped : re_ingredient}, function (err, products) {
-                if (err) {
-                    res.send(err);
-                } else {
-                    res.send(products);
-                }
-            });
+	    if(notIngredient){
+		Product.find({ ingredients_stripped : { $not: re_ingredient } }, function (err, products) {
+			if (err) {
+			    res.send(err);
+			} else {
+			    res.send(products);
+			}
+		    });
+
+	    } else {
+		//TODO: Remove this from production
+		Product.find({ ingredients_stripped : re_ingredient}, function (err, products) {
+			if (err) {
+			    res.send(err);
+			} else {
+			    res.send(products);
+			}
+		    });
+	    }
         } else {
             res.send("please enter a value to search");
         }
@@ -132,7 +174,7 @@ var ProductController = function () {
 
         brandname_stripped = strip(brandname);
         productname_stripped = strip(productname);
-        ingredients_stripped = strip(ingredients);
+        ingredients_stripped = ingredients.replace(/['";:.\/?\\-]/g, '');
 
         //parse ingredients by commas and store in array
         ingredients_array = ingredients.split(',');
