@@ -8,6 +8,7 @@ var express = require('express')
   , path = require('path')
   , mongodb = require('mongodb')
   , mongoose = require('mongoose');
+
 var app = express();
 var db = mongoose.connection;
 
@@ -48,7 +49,7 @@ app.get('/contact', routes.contact);
 app.get('/allproducts', pc.showAllProducts); //for testing
 
 app.post('/search', pc.findProduct);
-app.post('/contribute', pc.saveProduct);
+app.post('/contribute', pc.contribute);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

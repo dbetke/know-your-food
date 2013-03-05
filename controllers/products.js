@@ -1,6 +1,8 @@
 var ProductController = function () {
     "use strict";
-    var Product = require('../models/product');
+    var Product = require('../models/product'),
+        nodemailer = require('nodemailer'),
+        config = require('../config');;
 
     function strip(item) {
 	//strip all punctuation, leave whitespaces between words, strip whitespace at the beginning, strip whitespace at the end
@@ -138,11 +140,40 @@ var ProductController = function () {
 			    res.send(products);
 			}
 		    });
+		    
+		//res.send('please use a second search term');
 	    }
         } else {
             res.send("please enter a value to search");
         }
     };
+
+    this.contribute = function (req, res){
+	
+        var brandname = req.body.brandname.toUpperCase(),
+            productname = req.body.productname.toUpperCase(),
+            ingredients = req.body.ingredients.toLowerCase(),
+	    smtpTransport = nodemailer.createTransport("SMTP",{
+	    service: "Gmail",
+	    auth: {
+		user: config.username,
+		pass: config.password
+	    }
+	});
+	
+	smtpTransport.sendMail({
+	    from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
+	    to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
+	    subject: "Know Your Food Contribution", // Subject line
+	    text: 'BRAND NAME: ' + brandname + '\nPRODUCT NAME: ' + productname + '\nINGREDIENTS: ' + ingredients 
+	}, function(error, response){
+	    if(error){
+		res.send(error);
+	    }else{
+		res.redirect('/contribute');
+	    }
+	});
+    }
 
     this.saveProduct = function (req, res) {
         var ingredients_array,
