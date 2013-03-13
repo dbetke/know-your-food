@@ -33,7 +33,6 @@ var ProductController = function () {
         Product.find().remove();
     };
     
- //working, but partial
     this.findProduct = function (req, res, callback) {
         var obj = req.body || req,
             brandname,
@@ -179,8 +178,8 @@ var ProductController = function () {
                 smtpTransport = nodemailer.createTransport("SMTP",{
                 service: "Gmail",
                     auth: {
-                            user: 'knowyourfoodingredients',//config.username,
-                            pass: 'ingredients'//config.password
+                            user: config.username,
+                            pass: config.password
                     }
                 });
       
