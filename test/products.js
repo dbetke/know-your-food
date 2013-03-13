@@ -20,6 +20,7 @@ var p = new Product({
 
 describe('ProductController', function () {
     beforeEach(function(done){
+        console.log('saving product before test');
         p.save(function(err, newProduct){
             if (err) {
                 throw err;
@@ -54,7 +55,7 @@ describe('ProductController', function () {
     describe('#findProducts()', function (req, res) {
 
         it('should return products matching brand and product and not matching ingredient', function () {
-            var docs = pc.findProduct({'brandname' : 'testBrand', 'productname' : 'testProduct', 'ingredient' : 'ingredient1', 'notIngredient' : true}, res, function (err, item) {
+            pc.findProduct({'brandname' : 'testBrand', 'productname' : 'testProduct', 'ingredient' : 'ingredient1', 'notIngredient' : true}, res, function (err, item) {
                 if (err) {
                     throw err;
                 }
@@ -62,55 +63,128 @@ describe('ProductController', function () {
                     item.length.should.equal(0);
                     item.length.should.not.equal(1);
                 }
-            });   
+            })   
         });
-        
+  
+    //this test keeps failing, returns nothing from db here but works in browser
         it.skip('should return products matching brand and product and ingredient', function () {
-            //...
+            pc.findProduct({'brandname' : 'testBrand', 'productname' : 'testProduct', 'ingredient' : 'ingredient1'}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(1);
+                    item.length.should.not.equal(0);
+                }
+            })
         });    
-        
+    
+    //this test keeps failing, returns nothing from db here but works in browser
         it.skip('should return products matching brand and product', function () {
-            //...
+            pc.findProduct({'brandname' : 'testBrand', 'productname' : 'testProduct'}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(1);
+                    item.length.should.not.equal(0);
+                    
+                }
+            })
         });
         
-        it.skip('should return products matching brand and not matching ingredient', function () {
-            //...
+        it('should return products matching brand and not matching ingredient', function () {
+            pc.findProduct({'brandname' : 'testBrand', 'ingredient' : 'ingredient1', 'notIngredient' : true}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(0);
+                    item.length.should.not.equal(1);
+                }
+            })
         });
         
+    //this test keeps failing, returns nothing from db here but works in browser
         it.skip('should return products matching brand and ingredient', function () {
-            //...
+            pc.findProduct({'brandname' : 'testBrand', 'ingredient' : 'ingredient1'}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(1);
+                    item.length.should.not.equal(0);
+                }
+            })
         });
         
+     //this test keeps failing, returns nothing from db here but works in browser       
         it.skip('should return products matching brand', function () {
-            //...
+            pc.findProduct({'brandname' : 'testBrand'}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(1);
+                    item.length.should.not.equal(0);
+                }
+            })
         });
         
-        it.skip('should return products matching product and not matching ingredient', function () {
-            //...
+
+        it('should return products matching product and not matching ingredient', function () {
+            pc.findProduct({'productname' : 'testProduct', 'ingredient' : 'ingredient1', 'notIngredient' : true}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(0);
+                    item.length.should.not.equal(1);
+                }
+            })
         });
-        
+ 
+      //this test keeps failing, returns nothing from db here but works in browser       
         it.skip('should return products matching product and ingredient', function () {
-            //...
+            pc.findProduct({'productname' : 'testProduct', 'ingredient' : 'ingredient1'}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(1);
+                    item.length.should.not.equal(0);
+                }
+            })
         });
         
+      //this test keeps failing, returns nothing from db here but works in browser             
         it.skip('should return products matching product', function () {
-            //...
+            pc.findProduct({'productname' : 'testProduct'}, res, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+                else {
+                    item.length.should.equal(1);
+                    item.length.should.not.equal(0);
+                }
+            })
         });
         
         it('should return products matching ingredient', function () {
-           var docs = pc.findProduct({'ingredient' : 'ingredient1'}, res, function (err, item) {
+           pc.findProduct({'ingredient' : 'ingredient1'}, res, function (err, item) {
                if (err) {
                    throw err;
                }
                else {
+                   console.log(item);
                    item.length.should.equal(1);
                    item.length.should.not.equal(0);
                }
-           });
+           })
         });
        
         it('should return products not matching ingredient', function () {
-           var docs = pc.findProduct({'ingredient' : 'ingredient1', 'notIngredient' : true}, res, function (err, item) {
+           pc.findProduct({'ingredient' : 'ingredient1', 'notIngredient' : true}, res, function (err, item) {
                if (err) {
                    throw err;
                }
@@ -118,7 +192,7 @@ describe('ProductController', function () {
                    item.length.should.equal(0);
                    item.length.should.not.equal(1);
                }
-           });
+           })
         });
 
     });
