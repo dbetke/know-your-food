@@ -33,6 +33,7 @@ var ProductController = function () {
         Product.find().remove();
     };
     
+
     this.findProduct = function (req, res, callback) {
         var obj = req.body || req,
             brandname,

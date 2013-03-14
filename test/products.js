@@ -20,7 +20,6 @@ var p = new Product({
 
 describe('ProductController', function () {
     beforeEach(function(done){
-        console.log('saving product before test');
         p.save(function(err, newProduct){
             if (err) {
                 throw err;
@@ -176,7 +175,6 @@ describe('ProductController', function () {
                    throw err;
                }
                else {
-                   console.log(item);
                    item.length.should.equal(1);
                    item.length.should.not.equal(0);
                }
