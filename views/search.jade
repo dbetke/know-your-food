@@ -1,28 +1,25 @@
 extends layout
 
-block content
-
-  div.container-narrow
-    div.masthead
-      ul.nav.nav-pills.pull-right
-        li
-          a(href='../') Home
-        li.active
-          a(href='/search') Search  
-        li
-          a(href='/contribute') Contribute
-        li
-          a(href='/about') About
-        li
-          a(href='/contact') Contact
-      div.spacer
+block navbar
+  ul.nav.nav-pills.pull-right
+    li
+      a(href='../') Home
+    li.active
+      a(href='/search') Search  
+    li
+      a(href='/contribute') Contribute
+    li
+      a(href='/about') About
+    li
+      a(href='/contact') Contact
+  div.spacer
       
-    hr
-    
-    div.span12
-      h4 Search Product Ingredients
+block content  
+  div
+    h4 Search Product Ingredients
+    p
       form(method='post',action='') 
-        label Brand Search
+        label Brand
         input(type='text', name='brandname', id='brandname')
 
         label Product
@@ -37,12 +34,3 @@ block content
         i Check the box to search for products that do not contain specified ingredient
         p
         input(type='submit', name='search', value='Search').a.btn         
-
-      hr
-    
-      div.footer
-        p KnowYourFood 2013
-
-
-
-    

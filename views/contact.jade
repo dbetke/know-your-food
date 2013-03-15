@@ -1,26 +1,24 @@
 extends layout
 
-block content
 
-  div.container-narrow
-    div.masthead
-      ul.nav.nav-pills.pull-right
-        li
-          a(href='../') Home
-        li
-          a(href='/search') Search  
-        li
-          a(href='/contribute') Contribute
-        li
-          a(href='/about') About
-        li.active
-          a(href='/contact') Contact
-      div.spacer
-      
-    hr
-    
-    div.span12
-      h4 Contact Us
+block navbar
+  ul.nav.nav-pills.pull-right
+    li
+      a(href='../') Home
+    li
+      a(href='/search') Search  
+    li
+      a(href='/contribute') Contribute
+    li
+      a(href='/about') About
+    li.active
+      a(href='/contact') Contact
+  div.spacer
+  
+block content
+  div
+    h4 Contact Us
+    p
       form
         label Your Name
         input(type='text')
@@ -32,12 +30,3 @@ block content
         textarea(rows='5')
         p
         a.btn Submit          
-
-      hr
-    
-      div.footer
-        p KnowYourFood 2013
-
-
-
-    

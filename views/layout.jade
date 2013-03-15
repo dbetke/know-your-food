@@ -14,11 +14,19 @@ html
    
     // if lt IE 8
       script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
-    
+    block script
+
   body
-    block content
+    div.container-narrow
+      div.masthead
+        block navbar
 
-
+        hr
+        block content
+        block results
+        hr
+        div.footer
+          p KnowYourFood 2013
 
 
 

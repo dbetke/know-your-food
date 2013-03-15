@@ -1,26 +1,23 @@
 extends layout
 
-block content
+block navbar
+  ul.nav.nav-pills.pull-right
+    li
+      a(href='../') Home
+    li
+      a(href='/search') Search  
+    li.active
+      a(href='/contribute') Contribute
+    li
+      a(href='/about') About
+    li
+      a(href='/contact') Contact
+  div.spacer
 
-  div.container-narrow
-    div.masthead
-      ul.nav.nav-pills.pull-right
-        li
-          a(href='../') Home
-        li
-          a(href='/search') Search  
-        li.active
-          a(href='/contribute') Contribute
-        li
-          a(href='/about') About
-        li
-          a(href='/contact') Contact
-      div.spacer
-      
-    hr
-    
-    div.span12
-      h4 Contribute Product Ingredients
+block content
+  div
+    h4 Contribute Product Ingredients
+    p
       form(method='post',action='')
         label Brand Name
         input(type='text', name='brandname', required)
@@ -32,12 +29,6 @@ block content
         textarea(rows='5', name='ingredients', required)
         p
         input(type='submit', name='contribute', value='Contribute').a.btn          
-
-      hr
-    
-      div.footer
-        p KnowYourFood 2013
-
 
 
     
