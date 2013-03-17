@@ -161,9 +161,11 @@ var ProductController = function () {
         function search (str) {
             Product.find(str, function (err, products) {
                         if (err) {
-                            return callback(err);//res.send(err);
+                            return callback(err);
                         } else if (res !== undefined) {
                             res.send(products);
+                            //TODO:  Render the results on the search_results page
+                            //res.render('search_results', { title: 'Results', nbsp: ' ', products: products })
                         } else {
                             callback(null, products);
                         }
