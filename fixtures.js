@@ -446,6 +446,151 @@ productArray = [
                         brandname: "Campbell's",
                         productname: 'Cream of Mushroom Soup (Soup)',
                         ingredients: 'water, mushrooms, Modified Food Starch, wheat flour, salt, cream, dried whey, Monosodium Glutamate, soy protein concentrate, yeast extract, spice extract, dehydrated garlic, vegetable oil'
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Lentil Vegetable Soup (Vegan)",
+                        ingredients: "Filtered water, organic onions, organic lentils, organic carrots, organic celery, organic potatoes, organic tomatoes, organic spinach, organic green beans, organic extra virgin olive oil, organic garlic, sea salt, organic balsamic vinegar, spices (pure herbs & spices (no hidden ingredients)), organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Lentil Soup (Vegan)",
+                        ingredients: "Filtered water, organic lentils, organic celery, organic carrots, organic onions, organic potatoes, organic extra virgin olive oil, sea salt, spices (pure herbs & spices (no hidden ingredients))"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Black Bean Vegetable Soup (Vegan)",
+                        ingredients: "Organic black beans, filtered water, organic onions, organic carrots, organic corn, organic potatoes, organic celery, organic leeks, spices, organic cilantro, sea salt, organic garlic, organic high oleic safflower and/or sunflower oil, organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Split Pea Soup (Vegan)",
+                        ingredients: "Filtered water, organic green split peas, organic onions, organic celery, organic carrots, sea salt, organic basil, organic garlic, spices (pure herbs & spices (no hidden ingredients)), organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Lentil Vegetable Soup (Vegan)",
+                        ingredients: "Filtered water, organic onions, organic lentils, organic carrots, organic celery, organic potatoes, organic tomatoes, organic spinach, organic green beans, organic extra virgin olive oil, sea salt, organic garlic, organic balsamic vinegar, spices (pure herbs & spices (no hidden ingredients)), organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Vegetable Barley Soup (Vegan)",
+                        ingredients: "Filtered water, organic onions, organic barley, organic carrots, organic tomatoes, organic celery, organic leeks, organic zucchini, organic peas, sea salt, spices (pure herbs & spices (no hidden ingredients)), organic high oleic safflower and/or sunflower oil, organic garlic, organic black pepper, Contains gluten"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Chunky Tomato Bisque",
+                        ingredients: "Organic tomato puree, organic diced tomatoes, filtered water, organic cream, organic evaporated cane juice, organic onions, sea salt, organic cracked black pepper, Contains milk"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Chunky Tomato Bisque",
+                        ingredients: "Organic tomato puree, organic diced tomatoes, filtered water, organic cream, organic evaporated cane juice, organic onions, sea salt, organic black pepper, Contains milk"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Chunky Vegetable Soup (Vegan)",
+                        ingredients: "Filtered water, organic tomatoes, organic spinach, organic carrots, organic green beans, organic corn, organic peas, organic onions, organic celery, sea salt, organic cracked black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "No Chicken Noodle Soup (Vegan)",
+                        ingredients: "Filtered water, organic onions, organic carrots, organic noodles (organic semolina flour, water), organic tofu, (filtered water, organic soybeans, nigari [magnesium chloride, a natural firming agent]), organic celery, organic leeks, hydrolyzed corn and soy protein, organic high oleic safflower and/or sunflower oil, organic parsley, yeast extract, spices (pure herbs & spices (no hidden ingredients)), Contains wheat and soy, Organic ingredients verified by QAI "
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Cream of Tomato Soup",
+                        ingredients: "Organic tomato puree, filtered water, organic cream, organic evaporated cane juice, organic onions, sea salt, organic black pepper, Contains milk"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Fire Roasted Southwestern Vegetable Soup (Vegan)",
+                        ingredients: "Filtered water, organic tomatoes, organic roasted potatoes, organic fire roasted corn, organic black beans, organic fire roasted onions, organic carrots, organic fire roasted bell peppers, organic celery, organic green chiles, organic extra virgin olive oil, sea salt, organic tomato puree, chipotle peppers, spices (pure herbs & spices (no hidden ingredients)), organic black pepper, organic onions, organic balsamic vinegar"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Minestrone Soup (Vegan)",
+                        ingredients: "Filtered water, organic tomatoes, organic onions, organic carrots, organic kidney beans, organic potatoes, organic celery, organic green beans, organic peas, organic pasta (organic semolina flour), organic leeks, sea salt, spice (pure herbs & spices (no hidden ingredients)), organic high oleic safflower and/or sunflower oil, organic garlic, organic black pepper, Contains wheat"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Thai Coconut Soup (Tom Kha Phak) (Vegan)",
+                        ingredients: "Filtered water, organic coconut milk, organic sweet potatoes, organic carrots, organic tofu (filtered water, organic soybeans, nigari [magnesium chloride, a natural firming agent]), organic green beans, organic onions, organic shiitake mushrooms, spices, sea salt, organic evaporated cane juice, organic cornstarch, organic tamari (water, organic soybeans, sea salt), kaffir lime leaf, organic garlic, shallots, organic high oleic safflower and/or sunflower oil, organic orange peel, Contains soy and tree nuts (coconut)"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Lentil Soup (Vegan)",
+                        ingredients: "Filtered water, organic lentils, organic celery, organic carrots, organic onions, organic potatoes, organic extra virgin olive oil, sea salt, spices (pure herbs & spices (no hidden ingredients))"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Minestrone Soup (Vegan)",
+                        ingredients: "Filtered water, organic tomatoes, organic onions, organic carrots, organic kidney beans, organic potatoes, organic celery, organic green beans, organic pasta (organic semolina flour), organic peas, organic leeks, spices (pure herbs & spices (no hidden ingredients)), organic high oleic safflower and/or sunflower oil, sea salt, organic garlic, organic black pepper, Contains wheat"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Cream of Mushroom Soup",
+                        ingredients: "Filtered water, organic mushrooms, organic onions, organic wheat flour, organic high oleic safflower and/or sunflower oil, organic leeks, organic grade AA butter (cream, salt, annatto [color]), organic cream, spices (pure herbs & spices (no hidden ingredients)), sea salt, organic garlic, organic black pepper, Contains wheat and milk"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Cream of Tomato Soup",
+                        ingredients: "Organic tomato puree, filtered water, organic cream, organic evaporated cane juice, organic onions, sea salt, organic black pepper, Contains milk"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Split Pea Soup (Vegan)",
+                        ingredients: "Filtered water, organic green split peas, organic onions, organic celery, organic carrots, organic basil, sea salt, organic garlic, spices (pure herbs & spices (no hidden ingredients)), organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Tuscan Bean & Rice Soup (Vegan)",
+                        ingredients: "Filtered water, organic brown rice, organic onions, organic borlotti beans, organic celery, organic spinach, organic carrots, organic tomato puree, organic extra virgin olive oil, organic garlic, organic spices (pure herbs & spices (no hidden ingredients)), sea salt, organic high oleic safflower and/or sunflower oil, organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Light in Sodium - Butternut Squash Soup (Vegan)",
+                        ingredients: "Filtered water, organic butternut squash, organic onions, organic evaporated cane juice, organic wheat flour, organic high oleic safflower and/or sunflower oil, sea salt, organic garlic, organic spices (pure herbs & spices (no hidden ingredients)), organic cracked black pepper, organic extra virgin olive oil, Contains wheat"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Hearty French Country Vegetable Soup (Vegan)",
+                        ingredients: "filtered water, organic tomatoes, organic onions, organic mushrooms, organic white beans, organic bell peppers, organic long grain red rice, organic zucchini, organic extra virgin olive oil, sea salt, organic garlic, organic spices, organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Curried Lentil Soup (Vegan)",
+                        ingredients: "Filtered water, organic onions, organic black urad dal (Dal is the Indian word for lentils, beans or peas), organic high oleic safflower and/or sunflower oil, organic mung dal (Dal is the Indian word for lentils, beans or peas), organic yellow split peas, organic green lentils, organic garlic, organic ginger, sea salt, spices (pure herbs & spices (no hidden ingredients)), organic turmeric, organic jalapeño peppers, organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Hearty Rustic Italian Vegetable (Vegan)",
+                        ingredients: "filtered water, organic tomatoes, organic onions, organic bell peppers, organic zucchini, organic garbanzo beans, organic kale, organic mushrooms, organic brown rice, organic extra virgin olive oil, organic garlic, sea salt, organic spices, organic basil, organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Indian Golden Lentil Soup (Vegan)",
+                        ingredients: "filtered water, organic yellow split peas, organic red lentils, organic carrots, organic tomato puree, organic extra virgin olive oil, shallots, organic garlic, organic ginger, sea salt, spices  (pure herbs & spices (no hidden ingredients)), organic turmeric, organic black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Hearty Spanish Rice & Red Bean Soup (Vegan)",
+                        ingredients: "filtered water, organic tomatoes, organic onions, organic red beans, organic bell peppers, organic zucchini, organic corn, organic brown rice, organic green chiles, organic garlic, sea salt, organic high oleic safflower and/or sunflower oil, organic cilantro, organic spices, organic extra virgin olive oil, organic cracked black pepper"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Pasta & 3 Bean Soup (Vegan)",
+                        ingredients: "Filtered water, organic onions, organic beans (garbanzo, kidney and cannellini), organic carrots, organic celery, organic tomatoes, organic spinach, organic macaroni (organic semolina flour), organic extra virgin olive oil, organic tomato puree, sea salt, organic garlic, organic balsamic vinegar, spices (pure herbs & spices (no hidden ingredients)), organic black pepper, Contains wheat"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Alphabet Soup (Vegan)",
+                        ingredients: "Filtered water, organic tomato puree, organic corn, organic carrots, organic potatoes, organic pasta (organic semolina flour), organic green beans, sea salt, organic onions, organic evaporated cane juice, organic black pepper, Contains wheat"
+                    },
+                    {
+                        brandname: "Amy's",
+                        productname: "Organic Summer Corn & Vegetable Soup",
+                        ingredients: "Filtered water, organic corn, organic lowfat milk, organic onions, organic potatoes, organic leeks, organic red bell peppers, organic grade AA butter (organic cream, salt), sea salt, organic basil, organic spices (pure herbs & spices (no hidden ingredients)), bay leaves, Contains milk"
                     }
                     
                 ]
