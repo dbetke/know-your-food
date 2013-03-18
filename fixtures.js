@@ -591,7 +591,198 @@ productArray = [
                         brandname: "Amy's",
                         productname: "Organic Summer Corn & Vegetable Soup",
                         ingredients: "Filtered water, organic corn, organic lowfat milk, organic onions, organic potatoes, organic leeks, organic red bell peppers, organic grade AA butter (organic cream, salt), sea salt, organic basil, organic spices (pure herbs & spices (no hidden ingredients)), bay leaves, Contains milk"
+                    },
+                    {
+                        brandname: "Lipton Soup Secrets",
+                        productname: "Noodle Soup",
+                        ingredients: "Enriched Egg Noodles [Wheat Flour, Eggs, Niacin, Iron, Thiamin Mononitrate (Vitamin B1),Riboflavin (Vitamin B2), Folic Acid], Maltodextrin, Salt, Corn Syrup (Dried), Monosodium Glutamate, Chicken Fat, Chicken Powder, Partially Hydrogenated Soybean Oil, Hydrolyzed Soy Protein, Corn Starch, Yeast Extract, Parsley (Dried), Disodium Inosinate, Disodium Guanylate, Turmeric, Chicken Broth (Dried), Spice, Natural Flavors"
+                    },
+                    {
+                        brandname: "Lipton Soup Secrets",
+                        productname: "Ring-O-Noodle Soup",
+                        ingredients: "ENRICHED EGG NOODLES [WHEAT FLOUR AND DERUM FLOUR, EGG, NIACIN, IRON, THIAMIN MONONITRATE (VITAMIN B1), RIBOFLAVIN (VITAMIN B2), FOLIC ACID], MALTODEXTRIN, SALT, CHICKEN WHITE MEAT (DEHYDRATED), CHICKEN POWDER, MONOSODIUM GLUTAMATE, CORNSTARCH, CORN SYRUP (DEHYDRATED), AUTOLYZED YEAST EXTRACT, PARTIALLY HYDROGENATED SOYBEAN OIL, CHICKEN FAT, SUGAR, WHEY PROTEIN CONCENTRATE (MILK), HYDROLYZED SOY PROTEIN, PARSLEY (DEHYDRATED), TURMERIC (FOR COLOR), NATURAL FLAVORS, SPICE, CONTAINS EGG, WHEAT, MILK, SOY"
+                    },
+                    {
+                        brandname: "Lipton Soup Secrets",
+                        productname: "Chicken Noodle Soup",
+                        ingredients: "ENRICHED EGG NOODLES [WHEAT FLOUR AND DERUM FLOUR, EGG, NIACIN, IRON, THIAMIN MONONITRATE (VITAMIN B1), RIBOFLAVIN (VITAMIN B2), FOLIC ACID], MALTODEXTRIN, SALT, CHICKEN WHITE MEAT (DEHYDRATED), CHICKEN POWDER, MONOSODIUM GLUTAMATE, CORNSTARCH, CORN SYRUP (DEHYDRATED), AUTOLYZED YEAST EXTRACT, PARTIALLY HYDROGENATED SOYBEAN OIL, CHICKEN FAT, SUGAR, WHEY PROTEIN CONCENTRATE (MILK), HYDROLYZED SOY PROTEIN, PARSLEY (DEHYDRATED), TURMERIC (FOR COLOR), NATURAL FLAVORS, SPICE, CONTAINS EGG, WHEAT, MILK, SOY"
+                    },
+                    {
+                        brandname: "Lipton Soup Secrets",
+                        productname: "Extra Noodle Soup",
+                        ingredients: "ENRICHED EGG NOODLES [WHEAT FLOUR, EGGS, NIACIN, IRON, THIAMIN MONONITRATE (VITAMIN B1), RIBOFLAVIN (VITAMIN B2), FOLIC ACID], MALTODEXTRIN, SALT, CHICKEN FAT, CORN SYRUP (DEHYDRATED), CHICKEN POWDER, MONOSODIUM GLUTAMATE, HYDROLYZED SOY PROTEIN, AUTOLYZED YEAST EXTRACT, CORNSTARCH, PARSLEY (DEHYDRATED), CHICKEN BROTH (DEHYDRATED), DISODIUM GUANYLATE, DISODIUM INOSINATE, TURMERIC, NATURAL FLAVORS, SPICES"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Miso Noodle Soup",
+                        ingredients: "noodles (wheat flour), miso (soybeans, rice, salt), soy protein, dehydrated vegetables (white & green onion, garlic, mushroom, wakame seaweed), yeast extract, evaporated cane juice, natural flavours (tapioca maltodextrin, chicken fat), tofu (soybean, salt, water), soy sauce powder (soybeans, wheat), bonito extract, sesame oil powder, sea salt, white pepper"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Black Bean Soup",
+                        ingredients: "BLACK BEANS, DEHYDRATED VEGETABLES (TOMATO, POTATO, CORN, BELL PEPPER, GARLIC), NATURAL FLAVOURS (CORN MALTODEXTRIN, YEAST EXTRACT, HYDROLYZED SOY PROTEIN), SALT, SPICES"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Couscous and Lentil Soup",
+                        ingredients: "COUSCOUS (100% SEMOLINA FROM DURUM WHEAT), LENTILS, DEHYDRATED VEGETABLES (TOMATO, CARROT, ONION, GARLIC, SPINACH), NATURAL FLAVOURS, HERBS & SPICES, YEAST EXTRACT, DEHYDRATED PINEAPPLE, SALT, TURMERIC (COLOUR)"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Split Pea Soup",
+                        ingredients: "DEHYDRATED SPLIT PEA, DEHYDRATED VEGETABLES (POTATO, ONION, CARROT, GARLIC, CELERY), NATURAL FLAVOURS (MALTODEXTRIN, BROWN SUGAR, YEAST EXTRACT, NATURAL SMOKE FLAVOR), SALT, PARSLEY, SPICES"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Potato Leek Soup",
+                        ingredients: "DEHYDRATED VEGETABLES (POTATO, ONION, LEEK, CARROT, GARLIC), SKIM MILK POWDER, SUNFLOWER OIL, NATURAL AND ARTIFICIAL FLAVORS (CORN MALTODEXTRIN, AUTOLYZED YEAST EXTRACT, CHICKENT FAT, GELATIN), SALT, CORN SYRUP SOLIDS, SPICE, MONO AND DIGLYCERIDES (DERIVED FROM VEGETABLE OIL), CITRIC ACID, SODIUM BISULFITE, BHT, TURMERIC (COLOR)"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Tomato Basil Pasta Soup",
+                        ingredients: "PASTA (DURUM WHEAT SEMOLINA), DEHYDRATED VEGETABLES (TOMATO, GARLIC), NATURAL FLAVOURS, BASIL, PARSLEY, SALT, XANTHAN GUM, SPICES"
+                    },
+                    {
+                        brandname: "Eating Right",
+                        productname: "Spicy Thai Noodle Soup",
+                        ingredients: "NOODLES (WHEAT FLOUR), DEHYDRATED VEGETABLES (WHITE ONION, GREEN ONION, GARLIC, BELL PEPPER, SHALLOTS), NATURAL FLAVOURS (YEAST EXTRACT, TAPIOCA MALTODEXTRIN, CHICKEN FAT, ANCHOVY), EVAPORATED CANE JUICE, SOY SAUCE (SOYBEANS, WHEAT), SESAME (SEEDS AND OIL), SPICES (INCLUDING MILD CHILIES, LEMONGRASS, GINGER, BLACK PEPPER, CUMIN, CAYENNE, TURMERIC), LIME, CILANTRO, BASIL, CITRIC ACID, XANTHAN GUM, TAMARIND, EXTRACT OF PAPRIKA"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic Light Sodium Tomato (Soup)",
+                        ingredients: "ORGANIC REDUCED FAT MILK, FILTERED WATER, ORGANIC TOMATO PASTE, ORGANIC CANE, SUGAR, SODIUM CITRATE, SEA SALT, ORGANIC RICE FLOUR, ORGANIC CHEESE FLAVOR, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER "
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic Light Sodium Butternut Squash (Soup)",
+                        ingredients: "ORGANIC BUTTERNUT PUREE, FILTERED WATER, ORGANIC SOYMILK (FILTERED WATER, ORGANIC SOYBEANS), ORGANIC CANE SUGAR , ORGANIC EXPELLER PRESSED CANOLA OIL, ORGANIC RICE FLOUR, NATURAL FLAVOR, SEA SALT, ORGANIC ONION POWDER, ORGANIC, GARLIC POWDER, ORGANIC GINGER, ORGANIC NUTMEG, ORGANIC CINNAMON"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic Butternut Squash (Soup)",
+                        ingredients: "ORGANIC BUTTERNUT PUREE, FILTERED WATER, ORGANIC SOYMILK (FILTERED WATER, ORGANIC SOYBEANS), ORGANIC CANE SUGAR, SEA SALT, ORGANIC EXPELLER PRESSED, CANOLA OIL, ORGANIC RICE FLOUR, NATURAL FLAVOR, ORGANIC ONION POWDER, ORGANIC GARLIC POWDER, ORGANIC GINGER, ORGANIC NUTMEG, ORGANIC CINNAMON"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic Roasted Red Pepper and Tomato (Soup)",
+                        ingredients: "ORGANIC REDUCED FAT MILK, FILTERED WATER, ORGANIC TOMATO PASTE, ORGANIC RED BELL PEPPERS, ORGANIC CANE SUGAR, ORGANIC ROASTED RED BELL PEPPERS, ORGANIC ROASTED GARLIC, SEA SALT, ORGANIC BUTTER, SODIUM CITRATE, ORGANIC RICE FLOUR, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER, ORGANIC SPICES"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic Light Sodium Red Pepper and Tomato (Soup)",
+                        ingredients: "Organic reduced fat milk, Filtered water, Organic tomato paste, Organic red bell peppers, Organic evaporated cane juice, Organic roasted red bell peppers, Organic roasted garlic, Organic butter, Sodium citrate, Sea salt, Organic rice flour, Organic garlic powder, Organic onion powder, Organic spices"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic Tomato (Soup)",
+                        ingredients: "ORGANIC REDUCED FAT MILK, FILTERED WATER, ORGANIC TOMATO PASTE, ORGANIC CANE SUGAR, SEA SALT, SODIUM CITRATE, ORGANIC RICE FLOUR, ORGANIC CHEESE FLAVOR, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Organic French Onion (Soup)",
+                        ingredients: "FILTERED WATER, ORGANIC SAUTEED ONION BASE [ORGANIC ONIONS, ORGANIC DRIED ONION, SALT, ORGANIC BUTTER (MILK), NATURAL FLAVOR], ORGANIC CANE SUGAR, ORGANIC ONION FLAVOR CONTAINS ORGANIC SUNFLOWER OIL), SEA SALT, ORGANIC GARLIC POWDER, AUTOLYZED YEAST EXTRACT, XANTHAN GUM"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Cashew Carrot Ginger (Soup)",
+                        ingredients: "FILTERED WATER, ORGANIC CARROTS, ORGANIC CANE SUGAR, ORGANIC COCONUT, ORGANIC CORN STARCH, ORGANIC CASHEWS, SEA SALT, ORGANIC ROASTED GARLIC, ORGANIC GINGER PUREE (ORGANIC GINGER, CITRIC ACID), ORGANIC ONION POWDER, ORGANIC SPICES, CONTAINS: TREE NUTS (CASHEWS, COCONUT)"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Curried Red Lentil (Soup)",
+                        ingredients: "FILTERED WATER, ORGANIC ONIONS, ORGANIC CARROTS, ORGANIC RED LENTILS, ORGANIC COCONUT, ORGANIC CANE SUGAR, ORGANIC APPLE JUICE CONCENTRATE, ORGANIC CURRY POWDER (ORGANIC CANE SUGAR, SALT, ORGANIC SPICES, ORGANIC CHILI ORGANIC PEPPER, ORGANIC TURMERIC, ORGANIC DEHYDRATED GARLIC), SEA SALT, ORGANIC APPLE CIDER VINEGAR, ORGANIC GUAR GUM, XANTHAN GUM, CONTAINS: TREE NUTS (COCONUT)"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Spicy Black Bean (Soup)",
+                        ingredients: "FILTERED WATER, ORGANIC BLACK BEANS, ORGANIC ONION, ORGANIC RED BELL PEPPER, ORGANIC GREEN BELL PEPPER, ORGANIC TOMATO PASTE, ORGANIC GARLIC, SEA SALT, ORGANIC SPICES, ORGANIC CILANTRO, ORGANIC OLIVE OIL, ORGANIC CANE SUGAR, ORGANIC GUAR GUM"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Rosemary Potato Chowder (Soup)",
+                        ingredients: "WATER, POTATOES, CREAM (MILK), ONION, CELERY, CARROTS, CORNSTARCH, SEA SALT, GARLIC, ROSEMARY, NATURAL FLAVOR"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Vegetable Lentil & Roasted Red Pepper Soup",
+                        ingredients: "WATER, TOMATOES, ONIONS, BLACK BEANS, CELERY, RED LENTILS, LENTILS, ROASTED RED PEPPERS, CORN, CORN STARCH, GARLIC, SEA SALT, EVAPORATED CANE JUICE, APPLE CIDER VINEGAR, CHILI POWDER, CUMIN, GARLIC POWDER, ONION POWDER, NATURAL FLAVOR (CONTAINS MILK AND EGG), BLACK PEPPER"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Thai Sweet Potato Soup",
+                        ingredients: "WATER, SWEET POTATOES, WINTER SQUASH, CARROTS, ONIONS, CREAMED COCONUT, ALMOND BUTTER, RICE FLOUR, CORN STARCH, SEA SALT, APPLE CIDER VINEGAR, GARLIC, LEMON GRASS, ONION POWDER, GARLIC POWDER, CHILI PEPPER, GINGER, LIME OIL, NATURAL FLAVOR, CONTAINS: TREE NUTS"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Roasted Garlic & Mushroom Soup",
+                        ingredients: "WATER, POTATOES, LENTILS, ONIONS, CARROTS, CREAM (MILK), CORN STARCH, MUSHROOM BASE (MUSHROOMS, SALT, MUSHROOM STOCK, DEXTROSE, BUTTER, AUTOLYZED YEAST EXTRACT, SUGAR, MALTODEXTRIN, SOYBEAN OIL, NATURAL MUSHROOM FLAVOR, ONION POWDER, CARAMEL COLOR, NATURAL FLAVOR, SPICE EXTRACTIVE), MUSHROOM EXTRACT, SHERRY WINE, SEA SALT, ROASTED GARLIC, GARLIC POWDER, BLACK PEPPER, CONTAINS: MILK AND SOY (SOYBEAN OIL)"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Chipotle Sweet Potato Soup",
+                        ingredients: "FILTERED WATER, POTATOES, SWEET POTATOES, ONIONS, TOMATOES, CREAM (MILK), CORN STARCH, EVAPORATED CANE JUICE, CHIPOTLE CHILI BASE (CHILI PEPPERS, DRIED ONION AND GARLIC, SALT, YEAST EXTRACT, SPICES, PAPRIKA, CITRIC ACID, NATURAL FLAVORS), RICE FLOUR, SEA SALT, GARLIC, CHILI POWDER, CILANTRO, CUMIN, GARLIC POWDER, APPLE CIDER VINEGAR, ONION POWDER, CANOLA OIL, NATURAL FLAVORS, CITRIC ACID"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Poblano Pepper & Corn Chowder (Soup)",
+                        ingredients: "WATER, CORN, CREAM (MILK), POTATOES, ONIONS,POBLANO PEPPERS, WHEAT FLOUR, CORNSTARCH, RED BELL PEPPERS, SEASONING (CHILI PEPPER, SPICES, SALT, GARLIC, ONION, EVAPORATED CANE JUICE, CILANTRO, SUNFLOWER OIL), TOMATO PASTE, GARLIC, SEA SALT, SPICE, PEPPER PULP (DISTILLED VINEGAR, RED PEPPER, SALT)"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Santa Fe Style Chicken Soup",
+                        ingredients: "ORGANIC CHICKEN BROTH, WATER, ORGANIC TOMATOES, ORGANIC CORN, ORGANIC CARROTS, GRILLED CHICKEN BREAST (ORGANIC CHICKEN BREAST WITH RIB MEAT, WATER, ORGANIC CORN STARCH, SEA SALT), ORGANIC BROWN RICE, ORGANIC BLACK BEANS, ORGANIC ONIONS, ORGANIC GREEN PEPPERS, ORGANIC RED PEPPERS, ORGANIC CORN STARCH, ORGANIC GREEN CHILIES, ORGANIC CHICKEN FAT, SEA SALT, ORGANIC SPICES, ORGANIC ONION POWDER, ORGANIC GARLIC, CHILI POWDER (ORGANIC CHILI PEPPERS, ORGANIC SPICES, SALT, ORGANIC GARLIC), ORGANIC ROSEMARY EXTRACT"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Chicken Noodle Soup",
+                        ingredients: "ORGANIC CHICKEN BROTH, ORGANIC ONIONS, ORGANIC CARROTS, COOKED CHICKEN (ORGANIC CHICKEN MEAT, WATER, ORGANIC CORN STARCH, SEASALT), ORGANIC CELERY, EGG NOODLE (ORGANIC SEMOLINA [WHEAT], ORGANIC EGG WHITE, ORGANIC WHOLE EGG), ORGANIC CORN STARCH, ORGANIC PEAS, SEA SALT, ORGANIC GARLIC, ORGANIC SPICES, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER, ORGANIC PAPRIKA, ORGANIC TURMERIC, ORGANIC ROSEMARY EXTRACT"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Minestrone with Chicken Meatballs Soup",
+                        ingredients: "ORGANIC CHICKEN BROTH, ORGANIC TOMATOES, ORGANIC ONIONS, COOKED ITALIAN STYLE CHICKEN MEATBALLS (ORGANIC CHICKEN MEAT, WATER, BREAD CRUMBS [ORGANIC WHEAT FLOUR, ORGANIC EXPELLER PRESSED PALM OIL, SALT, YEAST], ORGANIC SPICES [INCLUDING GROUND FENNEL], ORGANIC CANE SUGAR, ORGANIC NATURAL FLAVORINGS,ORGANIC CORN STARCH, SEA SALT), ORGANIC CARROTS, ORGANIC TOMATO PASTE, ORGANIC GREEN BEANS, PENNE PASTA (ORGANIC SEMOLINA FLOUR [WHEAT], EGG WHITES), ORGANIC ZUCCHINI, ORGANIC CORN STARCH, ORGANIC KIDNEY BEANS, ORGANIC NAVY BEANS, ORGANIC CHICKEN FAT, SEA SALT, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER, ORGANIC CANE SUGAR, ORGANIC SPICES, ORGANIC ROSEMARY EXTRACT"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Chicken & Wild Rice Soup",
+                        ingredients: "ORGANIC CHICKEN BROTH, ORGANIC ONIONS, ORGANIC CARROTS, ORGANIC CELERY, COOKED CHICKEN (ORGANIC CHICKEN MEAT, WATER, ORGANIC CORN STARCH), ORGANIC BROWN RICE, ORGANIC WILD RICE, ORGANIC CORN STARCH, ORGANIC ROASTED CHICKEN SKIN, ORGANIC CHICKEN FAT, SEA SALT, ORGANIC ONION POWDER, ORGANIC GARLIC POWDER, ORGANIC SPICES, ORGANIC PAPRIKA, ORGANIC TURMERIC, ORGANIC ROSEMARY EXTRACT"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Chicken Spinach Penne Soup",
+                        ingredients: "ORGANIC CHICKEN BROTH, ORGANIC TOMATOES, ORGANIC CARROTS, ORGANIC SPINACH, PENNE PASTA {ORGANIC SEMOLINA FLOUR [WHEAT], ORGANIC EGG WHITE}, ORGANIC COOKED CHICKEN (ORGANIC CHICKEN MEAT, WATER, ORGANIC CORN STARCH, SEA SALT), ORGANIC CORN STARCH, ORGANIC CHICKEN FAT, ORGANIC ROASTED CHICKEN SKIN, SEA SALT, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER, ORGANIC CANE SUGAR, ORGANIC SPICES, ORGANIC ROSEMARY EXTRACT"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Hearty Tomato Bisque (Soup)",
+                        ingredients: "WATER, ORGANIC TOMATOES, ORGANIC TOMATO PASTE, ORGANIC CREAM [MILK], ORGANIC CANE SUGAR, ORGANIC CORN STARCH, SEA SALT, SODIUM CITRATE, ORGANIC GARLIC, ORGANIC ONION POWDER"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Butternut Squash Bisque (Soup)",
+                        ingredients: "WATER, ORGANIC BUTTERNUT PUREE, ORGANIC CARROTS, ORGANIC CREAM (MILK), ORGANIC CANE SUGAR, ORGANIC CORN STARCH, ORGANIC APPLE JUICE CONCENTRATE, ORGANIC CANOLA OIL, SEA SALT, ORGANIC APPLE CIDER VINEGAR, ORGANIC ONION POWDER, ORGANIC GINGER, ORGANIC GARLIC POWDER, ORGANIC NUTMEG, ORGANIC CINNAMON"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Roasted Red Pepper & Tomato Bisque (Soup)",
+                        ingredients: "WATER, ORGANIC TOMATOES, ORGANIC TOMATO PASTE, ORGANIC CREAM [MILK], ORGANIC RED BELL PEPPERS, ORGANIC ONION, ORGANIC CANE SUGAR, ORGANIC CORN STARCH, SEA SALT, ORGANIC BUTTER (ORGANIC CREAM, LACTIC ACID) [MILK], ORGANIC ONION POWDER, ORGANIC GARLIC POWDER, SODIUM CITRATE, ORGANIC SPICES"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Cashew Carrot Ginger Bisque (Soup)",
+                        ingredients: "WATER, ORGANIC CARROTS, ORGANIC ONIONS, ORGANIC CANE SUGAR, ORGANIC COCONUT, ORGANIC CORN STARCH, ORGANIC CASHEWS, SEA SALT, ORGANIC ROASTED GARLIC, ORGANIC GINGER PUREE (ORGANIC GINGER, CITRIC ACID), ORGANIC SPICES, ORGANIC SUNFLOWER OIL, CONTAINS: TREE NUTS (CASHEWS, COCONUT)"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Cream of Mushroom (Soup)",
+                        ingredients: "FILTERED WATER, ORGANIC MUSHROOMS, ORGANIC CRÈME FRAÎCHE (ORGANIC CULTURED CREAM [MILK]), ORGANIC RICE STARCH, ORGANIC RICE FLOUR, SEA SALT, ORGANIC WHEY POWDER, ORGANIC ONION POWDER, ORGANIC GARLIC POWDER"
+                    },
+                    {
+                        brandname: "Pacific Naturals",
+                        productname: "Cream of Chicken (Soup)",
+                        ingredients: "ORGANIC CHICKEN BROTH (FILTERED WATER, ORGANIC CHICKEN), ORGANIC CRÈME FRAÎCHE (CULTURED CREAM [MILK]), ORGANIC RICE STARCH, ORGANIC COOKED CHICKEN, ORGANIC RICE FLOUR, SEA SALT, ORGANIC CHICKEN FAT, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER"
                     }
+                    
                     
                 ]
 
