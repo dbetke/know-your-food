@@ -19,14 +19,14 @@ block content
   div
     h4 Contact Us
     p
-      form
+      form(method='post',action='')
         label Your Name
-        input(type='text')
+        input(type='text', name='name', required)
         
         label Your Email Address
-        input(type='text')
+        input(type='text', name='email', required)
         
         label Message
-        textarea(rows='5')
+        textarea(rows='5', name='message', required)
         p
-        a.btn Submit          
+        input(type='submit', name='contact', value='Send').a.btn

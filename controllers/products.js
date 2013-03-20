@@ -259,6 +259,34 @@ var ProductController = function () {
             send("All fields are required");
         }
     };
+
+    this.contact = function (req, res){
+        
+        var contactName = req.body.name,
+            returnEmail = req.body.email,
+            message = req.body.message,
+                smtpTransport = nodemailer.createTransport("SMTP",{
+                service: "Gmail",
+                    auth: {
+                            user: config.username,
+                            pass: config.password
+                    }
+                });
+      
+        smtpTransport.sendMail({
+                    from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
+                    to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
+                    subject: "Contact Us", // Subject line
+                    text: 'NAME: ' + contactName + '\nEMAIL ADDRESS: ' + returnEmail + '\nMESSAGE: ' + message 
+            }, function(error, response){
+                if (error) {
+                        send(res, error.message);
+                } else {
+                    res.redirect('/');
+                }
+        });
+    }
+
 };
 
 

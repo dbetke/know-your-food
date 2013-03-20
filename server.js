@@ -51,6 +51,7 @@ app.get('/allproducts', pc.showAllProducts); //for testing
 app.post('/search_results', pc.findProduct);
 
 app.post('/contribute', pc.contribute);
+app.post('/contact', pc.contact);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
