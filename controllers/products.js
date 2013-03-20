@@ -11,7 +11,7 @@ var ProductController = function () {
             console.log(msg);
         }
     }
-        
+
     this.strip = function (item) {
         //strip all punctuation, leave whitespaces between words, strip whitespace at the beginning, strip whitespace at the end
         return item.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
@@ -163,9 +163,7 @@ var ProductController = function () {
                         if (err) {
                             return callback(err);
                         } else if (res !== undefined) {
-                            res.send(products);
-                            //TODO:  Render the results on the search_results page
-                            //res.render('search_results', { title: 'Results', nbsp: ' ', products: products })
+                            res.render('search_results', { title: 'Results', nbsp: ' ', results: products });
                         } else {
                             callback(null, products);
                         }

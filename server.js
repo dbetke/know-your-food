@@ -45,10 +45,11 @@ app.get('/search', routes.search);
 app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
-
 app.get('/allproducts', pc.showAllProducts); //for testing
 
-app.post('/search', pc.findProduct);
+//this should be a get
+app.post('/search_results', pc.findProduct);
+
 app.post('/contribute', pc.contribute);
 
 http.createServer(app).listen(app.get('port'), function(){

@@ -1,18 +1,5 @@
 extends layout
 
-block script
-  script(type='text/javascript')
-    $(function () {
-      $.getJSON('/search', function (response) {
-        console.log('test' + response);
-        if(response.err) {
-          console.log(response.err);
-        } else {
-          $('.result').html(response);
-        }
-      });
-    });
-
 block navbar
   ul.nav.nav-pills.pull-right
     li
@@ -33,4 +20,7 @@ block content
     p
 
 block results
-  div.result
+
+  -for result in results
+    b=result.brandname + " " + result.productname 
+    p=result.ingredients
