@@ -781,8 +781,197 @@ productArray = [
                         brandname: "Pacific Naturals",
                         productname: "Cream of Chicken (Soup)",
                         ingredients: "ORGANIC CHICKEN BROTH (FILTERED WATER, ORGANIC CHICKEN), ORGANIC CRÈME FRAÎCHE (CULTURED CREAM [MILK]), ORGANIC RICE STARCH, ORGANIC COOKED CHICKEN, ORGANIC RICE FLOUR, SEA SALT, ORGANIC CHICKEN FAT, ORGANIC GARLIC POWDER, ORGANIC ONION POWDER"
-                    }
-                    
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Chicken & Wild Rice (soup)",
+                        ingredients: "certified organic chicken broth (water, chicken stock, sea salt), certified organic carrots, certified organic cooked chicken meat, certified organic wild rice, certified organic rice, certified organic celery, certified organic corn starch, sea salt, water, certified organic chicken flavor (natural flavor, sea salt), certified organic chicken fat, certified organic onion powder, certified organic soy protein concentrate, certified organic onion, certified organic natural flavor, certified organic black pepper, certified organic chives, certified organic garlic powder, certified organic yeast extract, certified organic cane juice, certified organic parsley flakes, certified organic turmeric, natural flavor, certified organic tomato paste, certified organic thyme, certified organic rosemary, certified organic carrot powder, certified organic potato flour, certified organic canola oil"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Chicken noodle (soup)",
+                        ingredients: "certified organic chicken broth (water, chicken stock, sea salt), certified organic carrots, certified organic cooked chicken meat, certified organic egg noodles (semolina, whole egg powder), certified organic celery, water, sea salt, certified organic corn starch, certified organic chicken flavor (natural flavor, sea salt), certified organic chicken fat, certified organic onion powder, certified organic soy protein concentrate, certified organic egg white powder, certified organic onion, certified organic natural flavor, certified organic black pepper, certified organic garlic powder, certified organic chives, certified organic yeast extract, certified organic cane juice, certified organic parsley flakes, certified organic turmeric, natural flavor, certified organic tomato paste, certified organic thyme, certified organic rosemary, certified organic carrot powder, certified organic potato flour, certified organic canola oil"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Chicken tortilla (soup)",
+                        ingredients: "certified organic chicken broth (water, chicken stock, sea salt), certified organic cooked chicken meat, certified organic corn, certified organic tomatoes, certified organic onion, certified organic green bell pepper, certified organic rice, certified organic tomato paste, certified organic black beans, certified organic toasted corn flour, sea salt, water, certified organic tomato puree, certified organic corn starch, certified organic cumin powder, certified organic chicken flavor (natural flavor, sea salt), certified organic chicken fat, certified organic cane juice, certified organic dried red chili pepper, certified organic onion powder, certified organic garlic powder, certified organic soy protein concentrate, certified organic canola oil, certified organic celery, certified organic carrots, certified organic yeast extract, black pepper, citric acid, chipotle pepper, certified organic yeast extract, certified organic oregano, natural flavor, certified organic cayenne pepper powder, calcium chloride, certified organic red bell pepper, certified organic turmeric, certified organic carrot powder, certified organic potato flour"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Classic minestrone (soup)",
+                        ingredients: "water, certified organic tomato paste, certified organic carrots, certified organic tomatoes, certified organic diced celery, certified organic light red kidney beans, certified organic potatoes, certified organic green beans, certified organic peas, certified organic penne rigate pasta (durum semolina and egg white), certified organic garbanzo beans (chickpeas), certified organic spinach, certified organic corn starch, sea salt, certified organic sunflower oil, certified organic onion powder, certified organic raw sugar, certified organic garlic powder, certified organic parsley flakes, certified organic fennel seed powder, citric acid, certified organic black pepper, certified organic thyme, calcium chloride, certified organic gum arabic, certified organic basil extract, certified organic bay leaf extract, certified organic oregano extract, certified organic extract of rosemary (preservative)"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Creamy tomato bisque (soup)",
+                        ingredients: "water, certified organic tomato paste, certified organic diced tomatoes, certified organic tomato juice, certified organic raw sugar, certified organic cream, certified organic nonfat milk, certified organic wheat starch, certified organic corn starch, certified organic sunflower oil, sea salt, citric acid, certified organic garlic powder, certified organic parsley flakes, calcium chloride, certified organic basil extract, certified organic gum arabic, ascorbic acid, certified organic onion powder, certified organic extract of rosemary (preservative)"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Garden vegetable (soup)",
+                        ingredients: "water, certified organic tomato puree (water, tomato paste), certified organic carrots, certified organic diced celery, certified organic corn, certified organic cut green beans, certified organic peas, certified organic tomatoes, certified organic potatoes, certified organic penne rigate pasta (durum semolina, egg white), sea salt, certified organic corn starch, certified organic onion, certified organic red bell pepper, certified organic cooked vegetables (carrots, onion, celery), certified organic onion powder, certified organic garlic powder, certified organic cane juice, certified organic canola oil, certified organic black pepper, certified organic basil, certified organic carrot powder, certified organic potato flour, citric acid, natural flavor, certified organic oregano, certified organic parsley flakes, calcium chloride"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Homestyle split pea (soup)",
+                        ingredients: "water, certified organic split peas, certified organic celery, certified organic corn starch, certified organic raw sugar, sea salt, certified organic onion powder, calcium chloride, certified organic malted barley flour, certified organic black pepper, natural smoke flavor, certified organic gum arabic, certified organic nutmeg extract, certified organic bay leaf extract, certified organic extract of rosemary (preservative)"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Reduced sodium chicken noodle (soup)",
+                        ingredients: "certified organic chicken broth (water, chicken stock, sea salt), certified organic carrots, certified organic cooked chicken meat, certified organic egg noodles (semolina, whole egg powder), certified organic celery, water, sea salt, certified organic corn starch, certified organic chicken flavor (natural flavor, sea salt), certified organic chicken fat, certified organic onion powder, certified organic soy protein concentrate, certified organic egg white powder, certified organic onion, certified organic natural flavor, certified organic black pepper, certified organic garlic powder, certified organic chives, certified organic yeast extract, certified organic cane juice, certified organic parsley flakes, certified organic turmeric, natural flavor, certified organic tomato paste, certified organic thyme, certified organic rosemary, certified organic carrot powder, certified organic potato flour, certified organic canola oil"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Reduced sodium garden vegetable (soup)",
+                        ingredients: "water, certified organic tomato puree (water, tomato paste), certified organic carrots, certified organic diced celery, certified organic corn, certified organic cut green beans, certified organic peas, certified organic tomatoes, certified organic potatoes, certified organic penne rigate pasta (durum semolina, egg white), sea salt, certified organic corn starch, certified organic onion, certified organic red bell pepper, certified organic cooked vegetables (carrots, onion, celery), certified organic onion powder, certified organic garlic powder, certified organic cane juice, certified organic canola oil, certified organic black pepper, certified organic basil, certified organic carrot powder, certified organic potato flour, citric acid, natural flavor, certified organic oregano, certified organic parsley flakes, calcium chloride"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Savory lentil (soup)",
+                        ingredients: "water, certified organic dried whole lentil beans, certified organic carrots, certified organic celery, certified organic tomato paste, certified organic corn starch, certified organic spinach, sea salt, certified organic sunflower oil, certified organic onion powder, certified organic raw sugar, certified organic black pepper"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Southwest black bean (soup)",
+                        ingredients: "water, certified organic black beans, certified organic tomato paste, certified organic corn, certified organic diced tomatoes, certified organic red bell pepper, certified organic onion, certified organic tomato juice, certified organic corn starch, sea salt, certified organic onion powder, certified organic cumin powder, certified organic garlic powder, certified organic chipotle pepper powder, certified organic black pepper, citric acid, calcium chloride, certified organic dried red chili pepper"
+                    },
+                    {
+                        brandname: "Muir Glen",
+                        productname: "Tomato basil (soup)",
+                        ingredients: "certified organic tomato puree (water, tomato paste), water, certified organic tomatoes, certified organic raw sugar, sea salt, certified organic corn starch, certified organic wheat starch, certified organic butter flavor, citric acid, certified organic extra virgin olive oil, certified organic parsley flakes, certified organic garlic powder, calcium chloride, certified organic black pepper, certified organic gum arabic, certified organic basil extract, ascorbic acid, certified organic onion powder, certified organic extract of rosemary (preservative)"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium 14 Garden Vegetable Soup",
+                        ingredients: "Filtered water, organic carrots, organic tomatoes, organic celery, organic peas, organic potatoes, organic green beans, organic tomato paste, organic rice starch, organic small white beans, organic honey, organic corn, organic zucchini, organic spinach, organic cabbage, organic broccoli, organic onions, organic onion powder, organic vegetable concentrate (includes organic evaporated cane juice, yeast extract, organic flavor), sea salt, organic bell peppers, organic spices, organic garlic powder, organic lemon juice concentrate, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Italian Minestrone Soup",
+                        ingredients: "Filtered water, organic carrots, organic tomatoes, organic kidney beans, organic small white beans, organic pasta shells (organic wheat flour, organic egg whites), organic onions, organic celery, organic tomato paste, organic spinach, organic vegetable concentrate (includes yeast extract, organic flavor), organic green beans, organic potatoes, organic evaporated cane juice, organic garlic powder, organic onion powder, organic peas, organic corn starch, sea salt, natural flavor (includes soy sauce), organic spices, vitamin a palmitate"
+                    }, 
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Vegetable Barley Soup",
+                        ingredients: "Filtered water, organic barley, organic peas, organic tomatoes, organic carrots, organic celery, organic onions, organic great northern beans, organic rice starch, organic broccoli, organic tomato paste, organic mushroom concentrate (includes organic mushrooms, organic soy sauce [organic soybeans], organic mushroom powder, organic butter [organic cream from milk], organic molasses, yeast extract, organic potato flour, organic flavor, natural flavor), salt, organic evaporated cane juice, organic vegetable concentrate, organic onion powder, natural flavor, organic spices, organic garlic powder, organic lemon juice concentrate, vitamin a palmitate "
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Corn and Vegetable Soup",
+                        ingredients: "Filtered water, organic corn, organic potatoes, organic peas, organic carrots, organic onions, organic tomato paste, organic small white beans, organic rice starch, organic celery, organic evaporated cane juice, organic vegetable concentrate (includes yeast extract, organic flavor), sea salt, organic garlic powder, natural flavor, organic onion powder, organic spices, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium 5 Bean Vegetable Soup",
+                        ingredients: "Filtered water, organic carrots, organic small white beans, organic pinto beans, organic onions, organic celery, organic tomato paste, organic rice starch, organic black beans, organic kidney beans, organic red beans, organic spinach, organic evaporated cane juice, sea salt, organic onion powder, organic garlic powder, organic spices, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Tomato Vegetable Soup",
+                        ingredients: "Filtered water, organic tomatoes, organic carrots, organic celery, organic peas, organic small white beans, organic tomato paste, organic green beans, organic honey, organic red beans, organic onion powder, organic vegetable concentrate (includes organic cane juice, yeast extract, organic flavor), organic cabbage, organic broccoli, organic onions, sea salt, organic zucchini, organic spinach, organic spices, organic bell peppers, organic garlic powder, organic lemon juice concentrate, vitamin a palmitate"
+                    }, 
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Split Pea & Carrots Soup",
+                        ingredients: "Filtered water, organic split peas, organic carrots, organic potatoes, organic celery, organic lentils, organic rice starch, organic evaporated cane juice, sea salt, natural flavors, organic spices, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Lentil & Carrots Soup",
+                        ingredients: "Filtered water, organic lentils, organic carrots, organic tomato paste, organic onions, organic rice starch, sea salt, organic evaporated cane juice, organic spices, organic onion powder, organic garlic powder, vitamin a palmitate"
+                    },        
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Black Bean Vegetable Soup",
+                        ingredients: "Filtered water, organic black beans, organic tomato paste, organic onions, organic tomatoes, organic red beans, organic corn, organic carrots, organic bell peppers, organic rice starch, organic jalapeno peppers, organic evaporated cane juice, sea salt, organic onion powder, organic garlic powder, organic spices, natural flavors, ascorbic acid"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Potato Leek Soup",
+                        ingredients: "Filtered water, organic potatoes, organic carrots, organic celery, organic leeks, organic potato flakes, organic onions, organic rice starch, organic expeller pressed canola oil, organic acacia gum, organic cane juice, sea salt, organic spices, natural flavor, vitamin a palmitate"
+                    }, 
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Split Pea Soup",
+                        ingredients: "Filtered water, organic green split peas, organic carrots, organic split pea powder, organic onions, organic celery, organic lentils, organic rice starch, organic evaporated cane juice, sea salt, organic spices, organic spinach powder for color, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic 40% Less Sodium Vegetable Soup",
+                        ingredients: "Filtered water, organic potatoes, organic carrots, organic celery, organic tomatoes, organic peas, organic green beans, organic corn, organic onions, organic tomato paste, organic corn starch, organic broccoli, organic red kidney beans, organic expeller pressed canola oil, sea salt, organic evaporated cane juice, organic spinach, organic onion powder, organic garlic granules, organic spices, organic concentrated lemon juice, organic white pepper, organic cayenne pepper, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Vegetable Soup",
+                        ingredients: "Filtered water, organic potatoes, organic carrots, organic celery, organic tomatoes, organic peas, organic green beans, organic corn, organic onions, organic tomato paste, organic corn starch, organic broccoli, organic red kidney beans, organic expeller pressed canola oil, organic evaporated cane juice, organic spinach, organic onion powder, organic garlic granules, organic spices, organic concentrated lemon juice, organic white pepper, organic cayenne pepper, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Lentil Soup",
+                        ingredients: "Filtered water, organic lentils, organic carrots, organic tomato paste, organic onions, organic rice starch, organic cane juice, organic expeller pressed canola oil, organic onion powder, organic garlic powder, organic spices vitamin a palmitate"
+                    }, 
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Minestrone Soup",
+                        ingredients: "Filtered water, organic celery, organic carrots, organic tomatoes, organic onions, organic peas, organic tomato paste, organic pasta (organic wheat flour, organic egg whites), organic green beans, organic red kidney beans, organic corn starch, organic small white beans, organic spinach, organic expeller pressed canola oil, organic evaporated cane juice, organic onion powder, organic garlic granules, organic spices, organic concentrated lemon juice, organic white pepper, organic cayenne pepper, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Black Bean Soup",
+                        ingredients: "Filtered water, organic black beans, organic tomato paste, organic corn, organic black bean flakes, organic onions, organic rice starch, organic cane juice, organic onion powder, organic garlic powder, organic expeller pressed canola oil, organic spices, natural flavors, ascorbic acid"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Tomato Soup",
+                        ingredients: "Filtered water, organic tomato puree, organic tomatoes, organic tomato paste, organic evaporated cane juice, organic unsalted butter (organic cream [from milk]), organic brown rice flour, organic onion powder, organic acacia gum, citric acid, organic garlic powder, organic black pepper, ascorbic acid"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Potato Leek Soup",
+                        ingredients: "Filtered water, organic potatoes, organic leeks, organic carrots, organic celery, organic potato flakes, organic rice starch, organic onions, organic expeller pressed canola oil, organic cane juice, organic acacia gum, organic spices, natural flavor, vitamin a palmitate"
+                    }, 
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Mushroom Barley Soup",
+                        ingredients: "Filtered water, organic mushrooms, organic barley, organic carrots, organic celery, organic onions, organic tomato paste, organic rice starch, organic expeller pressed canola oil, organic cane juice, organic mushroom powder, natural flavors, organic onion powder, organic spices, organic garlic powder, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Chicken Noodle Soup",
+                        ingredients: "Filtered water, organic carrots, organic dark meat chicken, organic celery, organic noodles (organic wheat flour, organic whole eggs, organic egg whites), organic rice starch, flavors (contains yeast extract), organic acacia gum, organic onion powder, organic garlic granules, organic spices, organic turmeric for color"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "No Salt Added Organic Rice Primavera Soup",
+                        ingredients: "Filtered water, organic carrots, organic onions, organic peas, organic rice, organic tomato paste, organic broccoli, organic rice starch, organic dried tomatoes, organic olive oil, natural flavors (contains yeast extract), organic garlic powder, organic onion powder, organic spices, vitamin a palmitate"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic Cream of Mushroom Soup",
+                        ingredients: "Milk, organic rice flour, organic mushroom concentrate (organic mushrooms, organic soy sauce [organic soybeans, organic maltodextrin], organic mushroom powder, organic butter [organic cream, lactic acid], organic molasses, yeast extract, organic potato flour, organic flavor, natural flavor), organic rice starch, salt, natural flavors, organic canola oil, organic onion powder, organic spices"
+                    }, 
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic Cream of Chicken Soup",
+                        ingredients: "Filtered water, organic cream (from milk), organic rice flour, organic chicken, organic soy protein, organic rice starch, salt, organic chicken broth, natural flavors (includes celery), organic canola oil, yeast extract, organic onion powder, organic garlic powder, organic parsley, organic white pepper, organic thyme, organic bay leaves, organic turmeric (for color)"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic Cream of Celery Soup",
+                        ingredients: "Filtered water, organic celery, organic cream (from milk), organic rice flour, salt, organic rice starch, natural flavors (includes organic soybeans), organic canola oil, organic celery concentrate, yeast extract, organic onion powder, organic garlic powder, organic parsley, organic white pepper"
+                    },   
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic Chicken Noodle Soup",
+                        ingredients: "Filtered water, organic carrots, organic dark meat chicken, organic celery, organic pasta (organic semolina wheat flour, organic eggs, organic egg whites), organic rice starch, organic acacia gum, organic chicken broth concentrate (includes organic chicken broth, organic chicken flavor [organic chicken meat, salt], organic chicken fat, organic soy sauce [{water, organic soybeans, salt}, organic maltodextrin], yeast extract, organic canola oil, organic onions, organic flavor), flavors, sea salt, organic onion powder, organic turmeric for color, organic spices"
+                    },
+                    {
+                        brandname: "Health Valley",
+                        productname: "Organic Chicken Rice Soup",
+                        ingredients: "Filtered water, organic rice, organic carrots, organic dark meat chicken, organic celery, organic acacia gum, organic chicken broth concentrate (includes organic chicken broth, organic chicken flavor [organic chicken meat, salt], organic chicken fat, organic soy sauce [{water, organic soybeans, salt}, organic maltodextrin], yeast extract, organic canola oil, organic onions, organic flavor), flavors, sea salt, organic onion powder, organic turmeric for color, organic spices"
+                    }      
                     
                 ]
 
