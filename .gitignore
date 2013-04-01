@@ -2,3 +2,4 @@
 .DS_Store
 .vagrant
 config.json
+manifest.yml
