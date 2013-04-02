@@ -8,7 +8,10 @@ var ProductController = require('./controllers/products'),
 mongoose.connect(mongoServer);
 */
 
-productArray = [
+productArray = [];
+
+
+/*               [ 
                     {
                         brandname: 'Progresso',
                         productname: 'High Fiber Chicken Tuscany (Soup)',
@@ -976,6 +979,7 @@ productArray = [
                     }      
                     
                 ]
+*/
 
 /*
 for (var item in productArray) {
