@@ -1,7 +1,7 @@
 var ProductController = function () {
-    "use strict";
+   "use strict";
     var Product = require('../models/product'),
-        nodemailer = require('nodemailer'),
+        nodemailer = require('nodemailer');
         config = require('../config');
     
     function send(res,msg) {
@@ -179,8 +179,8 @@ var ProductController = function () {
                 smtpTransport = nodemailer.createTransport("SMTP",{
                 service: "Gmail",
                     auth: {
-                            user: config.username,
-                            pass: config.password
+                            user: process.env.user || config.username,
+                            pass: process.env.pass || config.password
                     }
                 });
       
@@ -268,8 +268,8 @@ var ProductController = function () {
                 smtpTransport = nodemailer.createTransport("SMTP",{
                 service: "Gmail",
                     auth: {
-                            user: config.username,
-                            pass: config.password
+                            user: process.env.user || config.username,
+                            pass: process.env.pass || config.password
                     }
                 });
       
