@@ -1,7 +1,7 @@
 var ProductController = function () {
    "use strict";
     var Product = require('../models/product'),
-        nodemailer = require('nodemailer');
+        nodemailer = require('nodemailer'),
         config = require('../config');
     
     function send(res,msg) {
