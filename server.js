@@ -19,6 +19,8 @@ var Product = require('./models/product'); // require model, pull in product mod
 var ProductController = require('./controllers/products');
 var pc = new ProductController();
 
+//var fixture = require('./fixtures');
+
 mongoose.connect('mongodb://localhost/Products') // will create the Products database if it doesn't already exist.
 
 var db = mongoose.connection;
@@ -57,4 +59,8 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
+var productArray = require('./fixtures');
 
+for (var item in productArray) {
+    pc.saveProduct(productArray[item]);
+}

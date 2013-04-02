@@ -1,3 +1,4 @@
+/*
 var ProductController = require('./controllers/products'), 
     mongoose = require('mongoose'),
     mongoServer = 'mongodb://localhost/Products',
@@ -5,6 +6,7 @@ var ProductController = require('./controllers/products'),
     productArray;
 
 mongoose.connect(mongoServer);
+*/
 
 productArray = [
                     {
@@ -975,8 +977,10 @@ productArray = [
                     
                 ]
 
+/*
 for (var item in productArray) {
     pc.saveProduct(productArray[item]);
 }
+*/
 
-
+module.exports = productArray;
