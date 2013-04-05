@@ -15,7 +15,7 @@ block navbar
   div.spacer
       
 block content  
-  div
+  div.row.span3.offset2.center
     h4 Search Product Ingredients
     p
       form(method='post',action='/search_results') 
@@ -33,4 +33,5 @@ block content
         nbsp 
         i Check the box to search for products that do not contain specified ingredient
         p
-        input(type='submit', name='search', value='Search').a.btn         
+        input(type='submit', name='search', value='Search').a.btn
+  div.container.narrow

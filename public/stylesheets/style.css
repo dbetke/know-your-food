@@ -35,5 +35,11 @@ body {
 }
 
 .spacer{
-  height: 45px;;
+  height: 45px;
+}
+
+.center{
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -14,9 +14,9 @@ block navbar
     li.active
       a(href='/contact') Contact
   div.spacer
-  
+
 block content
-  div
+  div.row.span3.offset2.center
     h4 Contact Us
     p
       form(method='post',action='')
@@ -30,3 +30,6 @@ block content
         textarea(rows='5', name='message', required)
         p
         input(type='submit', name='contact', value='Send').a.btn
+
+  div.container.narrow
+
