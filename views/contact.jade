@@ -1,5 +1,17 @@
 extends layout
 
+block append script
+  script
+    function validateEmail() { 
+      var email = $('#email').val();
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var result = re.test(email);
+      if (!result) {
+        $('#email').val('');
+        $('#msg').addClass('alert').text('Please enter a valid email address.');
+      }
+      return result;
+    };
 
 block navbar
   ul.nav.nav-pills.pull-right
@@ -16,18 +28,19 @@ block navbar
   div.spacer
 
 block content
+  div#msg
   div.row.span3.offset2.center
     h4 Contact Us
     p
-      form(method='post',action='')
+      form(id='contactForm', method='post', action='', onSubmit='return validateEmail()')
         label Your Name
-        input(type='text', name='name', required)
+        input(type='text', id='name',  name='name', required)
         
         label Your Email Address
-        input(type='text', name='email', required)
+        input(type='text', id='email', name='email', required)
         
         label Message
-        textarea(rows='5', name='message', required)
+        textarea(rows='5', id='message', name='message', required)
         p
         input(type='submit', name='contact', value='Send').a.btn
 
