@@ -1,5 +1,22 @@
 extends layout
 
+block append script
+  script
+    $('document').ready(function () {
+      $('b').css({'cursor':'pointer'});
+
+      $('b').click(function () {
+        if ($(this).next('p').is(':visible')) {
+          $(this).next('p').hide();
+          $(this).css({'color':'#D8D8D8'});
+        } else {
+          $(this).next('p').show();
+          $(this).css({'color':'#000000'});
+        }
+      });
+      
+    });
+
 block navbar
   ul.nav.nav-pills.pull-right
     li
@@ -24,6 +41,7 @@ block results
     -for result in results
       b=result.brandname + " " + result.productname 
       p=result.ingredients
+      p 
   else
     p Sorry, no results found.
     br
