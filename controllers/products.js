@@ -179,8 +179,8 @@ var ProductController = function () {
                 smtpTransport = nodemailer.createTransport("SMTP",{
                 service: "Gmail",
                     auth: {
-                            user: process.env.user || config.username,
-                            pass: process.env.pass || config.password
+                            user: process.env.user || config.user,
+                            pass: process.env.pass || config.pass
                     }
                 });
       
@@ -193,7 +193,8 @@ var ProductController = function () {
                 if (error) {
                         send(res, error.message);
                 } else {
-                    res.redirect('/contribute');
+                    //res.redirect('/contribute');
+                    res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'Your contribution has been sent.  Thank you!' });
                 }
         });
     }
@@ -268,8 +269,8 @@ var ProductController = function () {
                 smtpTransport = nodemailer.createTransport("SMTP",{
                 service: "Gmail",
                     auth: {
-                            user: process.env.user || config.username,
-                            pass: process.env.pass || config.password
+                            user: process.env.user || config.user,
+                            pass: process.env.pass || config.pass
                     }
                 });
       

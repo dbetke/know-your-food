@@ -11,7 +11,7 @@ exports.search = function(req, res){
 
 /* contribute page */
 exports.contribute = function(req, res){
-  res.render('contribute', { title: 'Contribute', nbsp: ' ' })
+    res.render('contribute', { title: 'Contribute', nbsp: ' ', message: '' })
 };
 
 /* about page */
@@ -21,5 +21,5 @@ exports.about = function(req, res){
 
 /* contact page */
 exports.contact = function(req, res){
-  res.render('contact', { title: 'Contact Us', nbsp: ' ' })
+  res.render('contact', { title: 'Contact Us', nbsp: ' '})
 };

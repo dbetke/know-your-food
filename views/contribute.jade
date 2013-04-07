@@ -15,6 +15,9 @@ block navbar
   div.spacer
 
 block content
+
+  div.alert-success=message
+
   div.row.span3.offset2.center
     h4 Contribute Product Ingredients
     p
@@ -28,7 +31,8 @@ block content
         label Ingredients
         textarea(rows='5', name='ingredients', required)
         p
-        input(type='submit', name='contribute', value='Contribute').a.btn          
+        input(type='submit', name='contribute', value='Contribute').a.btn
+
   div.container.narrow
 
 
