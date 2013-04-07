@@ -2,8 +2,19 @@ extends layout
 
 block append script
   script
-    $(document).ready(function() {
-      $('.alert-success').fadeOut(7000);
+    var msg = !{JSON.stringify(message)};
+    $('document').ready(function () {
+      if (msg === "The product you entered already exists in the database") {
+        $('#msg').addClass('alert').text(msg);
+      } 
+      if (msg === "Your contribution has been sent.  Thank you!") {
+        $('#msg').addClass('alert').addClass('alert-success').text(msg);
+      }
+
+      $('.alert').append("<button type='button' class='close' data-dismiss='alert'>&times;</button>");
+      $('.close').click(function () {
+        $('#msg').hide();
+      });
     });
 
 block navbar
@@ -22,7 +33,7 @@ block navbar
 
 block content
 
-  div.alert-success=message
+  div#msg
 
   div.row.span3.offset2.center
     h4 Contribute Product Ingredients

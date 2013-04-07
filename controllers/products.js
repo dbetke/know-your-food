@@ -176,27 +176,36 @@ var ProductController = function () {
         var brandname = req.body.brandname.toUpperCase(),
             productname = req.body.productname.toUpperCase(),
             ingredients = req.body.ingredients.toLowerCase(),
-                smtpTransport = nodemailer.createTransport("SMTP",{
-                service: "Gmail",
+            re_brandname = new RegExp('^' + brandname),
+            re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"),
+            smtpTransport = nodemailer.createTransport("SMTP",{
+                    service: "Gmail",
                     auth: {
-                            user: process.env.user || config.user,
-                            pass: process.env.pass || config.pass
+                        user: process.env.user || config.user,
+                        pass: process.env.pass || config.pass
                     }
                 });
-      
-        smtpTransport.sendMail({
-                    from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
-                    to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
-                    subject: "Know Your Food Contribution", // Subject line
-                    text: 'BRAND NAME: ' + brandname + '\nPRODUCT NAME: ' + productname + '\nINGREDIENTS: ' + ingredients 
-            }, function(error, response){
-                if (error) {
-                        send(res, error.message);
+
+        Product.find({'brandname_stripped' : re_brandname, 'productname_stripped' : re_productname}, function (err, products) {
+                if (products.length === 0) {
+                    smtpTransport.sendMail({
+                            from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
+                                to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
+                                subject: "Know Your Food Contribution", // Subject line
+                                text: 'BRAND NAME: ' + brandname + '\nPRODUCT NAME: ' + productname + '\nINGREDIENTS: ' + ingredients 
+                                }, function(error, response){
+                            if (error) {
+                                send(res, error.message);
+                            } else {
+                                //res.redirect('/contribute');
+                                res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'Your contribution has been sent.  Thank you!' });
+                            }
+                        });
                 } else {
-                    //res.redirect('/contribute');
-                    res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'Your contribution has been sent.  Thank you!' });
+                    res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'The product you entered already exists in the database' });
                 }
         });
+        
     }
     
     this.saveProduct = function (req, res) {
