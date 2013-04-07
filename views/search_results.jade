@@ -20,7 +20,11 @@ block content
     p
 
 block results
-
-  -for result in results
-    b=result.brandname + " " + result.productname 
-    p=result.ingredients
+  if results.length > 0
+    -for result in results
+      b=result.brandname + " " + result.productname 
+      p=result.ingredients
+  else
+    p Sorry, no results found.
+    br
+    a.btn.btn-success(href='/search') New Search
