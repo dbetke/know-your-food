@@ -1,0 +1,22 @@
+extends layout
+
+block navbar
+  ul.nav.nav-pills.pull-right
+    li
+      a(href='../') Home
+    li
+      a(href='/search') Search
+    li
+      a(href='/contribute') Contribute
+    li
+      a(href='/about') About
+    li
+      a(href='/contact') Contact
+  div.spacer
+
+block content
+    div.alert-success=message
+    br
+    p From: #{from}
+    p Email: #{email}
+    p Message: #{messageBody}

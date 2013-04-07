@@ -48,6 +48,7 @@ app.get('/contribute', routes.contribute);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
 app.get('/allproducts', pc.showAllProducts); //for testing
+app.get('/message', routes.message);
 
 //this should be a get
 app.post('/search_results', pc.findProduct);

@@ -283,7 +283,7 @@ var ProductController = function () {
                 if (error) {
                         send(res, error.message);
                 } else {
-                    res.redirect('/');
+                    res.render('message', { title: 'Message', nbsp: ' ', message: 'The following message has been sent to Know Your Food.  Thank you!', from: contactName, email: returnEmail, messageBody: message });
                 }
         });
     }

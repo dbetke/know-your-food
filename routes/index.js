@@ -23,3 +23,8 @@ exports.about = function(req, res){
 exports.contact = function(req, res){
   res.render('contact', { title: 'Contact Us', nbsp: ' '})
 };
+
+/* message page */
+exports.message = function(req, res){
+    res.render('message', { title: 'Message', nbsp: ' ', message: '', from: '', email: '', messageBody: ''})
+};
