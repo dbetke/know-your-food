@@ -1235,7 +1235,7 @@ productArray = //[];
                     {
                         brandname: "Wolfgang Puck",
                         productname: "Signature Butternut Squash Organic Soup",
-                        ingredients: "organic vegetable stock )organic vegetables [certified organic carrots, certified organic onions, certified organic celery]), organic butternut squash, organic cream (organic milk), organic tapioca starch, organic honey, organic evaporated cane sugar juice, sea salt, organic butter (organic cream [organic milk], salt), organic potato starch, organic tomato paste, organic spice, organic molasses, organic yeast extract, organic dehydrated carrot, organic dehydrated onion, organic potato flour, organic lemon juice concentrate, flavoring, organic canola oil"
+                        ingredients: "organic vegetable stock, organic vegetables [certified organic carrots, certified organic onions, certified organic celery]), organic butternut squash, organic cream (organic milk), organic tapioca starch, organic honey, organic evaporated cane sugar juice, sea salt, organic butter (organic cream [organic milk], salt), organic potato starch, organic tomato paste, organic spice, organic molasses, organic yeast extract, organic dehydrated carrot, organic dehydrated onion, organic potato flour, organic lemon juice concentrate, flavoring, organic canola oil"
                     },
                     {
                         brandname: "Wolfgang Puck",
