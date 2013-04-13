@@ -8,10 +8,10 @@ var ProductController = require('./controllers/products'),
 mongoose.connect(mongoServer);
 */
 
-productArray = [];
+productArray = //[];
 
 
-/*               [ 
+                 [ 
                     {
                         brandname: 'Progresso',
                         productname: 'High Fiber Chicken Tuscany (Soup)',
@@ -976,15 +976,290 @@ productArray = [];
                         brandname: "Health Valley",
                         productname: "Organic Chicken Rice Soup",
                         ingredients: "Filtered water, organic rice, organic carrots, organic dark meat chicken, organic celery, organic acacia gum, organic chicken broth concentrate (includes organic chicken broth, organic chicken flavor [organic chicken meat, salt], organic chicken fat, organic soy sauce [{water, organic soybeans, salt}, organic maltodextrin], yeast extract, organic canola oil, organic onions, organic flavor), flavors, sea salt, organic onion powder, organic turmeric for color, organic spices"
-                    }      
-                    
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "New England Clam Chowder (soup)",
+                        ingredients: "potatoes, clam stock, water, clams, wheat flour, vegetable oil (corn, cottonseed, canola, soybean), modified food starch, salt, monosodium glutamate, yeast extract, sodium phosphate, potassium chloride, flavoring, cod flavoring, clam extract, succinic acid, sugar, soy sauce (soybeans, wheat, salt)"
+                    },                          
+                    {
+                        brandname: "Campbell's",
+                        productname: "Sun-Ripened Yellow Tomato (soup)",
+                        ingredients: "yellow tomato puree (water, yellow tomato paste), high fructose corn syrup, wheat flour, cream (milk), water, salt, potassium chloride, butter (cream), flavoring, canola oil, onions, parsley, lower sodium natural sea salt, cilantro, ascorbic acid (vitamin c), monopotassium phosphate, garlic, olive oil, turmeric, spice (thyme, black pepper), jalapeno peppers, red wine vinegar, lime juice concentrate"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Shrimp (soup)",
+                        ingredients: "water, shrimp, sauterne wine, vegetable oil (corn, cottonseed, canola, soybean), tomato puree (water, tomato paste), wheat flour, modified food starch, cream (milk), salt, monosodium glutamate, soy protein concentrate, yeast extract, flavoring"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Onion (soup)",
+                        ingredients: "water, dehydrated onions, vegetable oil (corn, cottonseed, canola, soybean), modified food starch, wheat flour, salt, sauterne wine, whey (dehydrated milk), butter (cream), soy protein concentrate, monosodium glutamate, yeast extract, flavoring, beta carotene"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Chicken & Mushroom (soup)",
+                        ingredients: "chicken stock, mushrooms, modified food starch, wheat flour, chicken meat, cream (milk), chicken fat, vegetable oil, salt, monosodium glutamate, dehydrated whey, soy protein concentrate, dehydrated mechanically separated chicken, yeast extract, hydrolyzed wheat gluten, water, flavoring, sodium phosphate, soy protein isolate, beta carotene, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Asparagus (soup)",
+                        ingredients: "water, asparagus, vegetable oil (corn, cottonseed, canola, soybean), modified food starch, wheat flour, salt, cream (milk), dehydrated whey, soy protein concentrate, sugar, monosodium glutamate, spice"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Manhattan Clam Chowder (soup)",
+                        ingredients: "clam stock, potatoes, carrots, tomato puree (water, tomato paste), clams, celery, modified food starch, salt, red peppers, green peppers, wheat flour, vegetable oil (corn, cottonseed, canola, soybean), spice, monosodium glutamate, flavoring, yeast extract, sodium phosphate, cod flavoring, clam extract, succinic acid, sugar, soy sauce (soybeans, wheat, salt)"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Chicken (soup)",
+                        ingredients: "chicken stock, wheat flour, modified food starch, chicken meat, cream (milk), salt, vegetable oil, monosodium glutamate, yeast extract, dehydrated mechanically separated chicken, soy protein concentrate, chicken fat, flavoring, vegetable oil, water, beta carotene for color, sodium phosphate, soy protein isolate, chicken flavor, soy lecithin, butter (cream), cream powder (cream, soy lecithin), natural flavor, dehydrated butter (cream, annatto), whey protein concentrate, xanthan gum, partially hydrogenated soybean oil, oleic acid, dehydrated butter, butyric acid, nonfat dry milk, acetoin power, acetyl propionyl, guar gum, enzyme modified butter fat and oil, buttermilk, whey, acetic acid, maltol"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Broccoli (soup)",
+                        ingredients: "water, broccoli, wheat flour, vegetable oil (corn, cottonseed, canola, soybean), salt, cream (milk), modified food starch, sugar, dehydrated whey, soy protein concentrate, dehydrated onions, mustard flour, flavoring, zinc chloride "
+                    },                    
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Celery (soup)",
+                        ingredients: "water, celery, chicken stock, wheat flour, modified food starch, vegetable oil (corn, cottonseed, canola, soybean), salt, cream (milk), soy protein concentrate, monosodium glutamate, flavoring, potassium chloride, mustard flour, chicken fat, dehydrated onions, yeast extract, beta carotene for color, xanthan gum, soy lecithin"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Mushroom Soup",
+                        ingredients: "water, mushrooms, vegetable oil (corn, cottonseed, canola, soybean, modified food starch, wheat flour, cream (milk), salt, dehydrated whey, lower sodium natural sea salt, monosodium glutamate, soy protein concentrate, yeast extract, flavoring, dehydrated garlic"
+                    },                          
+                    {
+                        brandname: "Campbell's",
+                        productname: "98% Fat Free Cream of Mushroom (soup)",
+                        ingredients: "water, mushrooms, wheat flour, modified food starch, unmodified food starch, soybean oil, salt, cream, whey protein concentrate, maltodextrin whey, buttermilk solids (buttermilk, whey proteins), butter (cream, salt), natural flavor, monosodium glutamate, mushroom powder (dextrin, mushroom extract, salt), autolyzed yeast extract, onion powder, potassium chloride, garlic powder, disodium guanylate, disodium inosinate, caramel color"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Golden Mushroom (soup)",
+                        ingredients: "beef stock, water, mushrooms, tomato puree (water, tomato paste), wheat flour, modified food starch, vegetable oil (corn, cottonseed, canola, soybean), sauterne wine, salt, yeast extract, monosodium glutamate, potassium chloride, hydrolyzed yeast protein, beef fat, flavoring, caramel color, dextrose, beta carotene"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "25% Less Sodium Chicken Noodle Soup",
+                        ingredients: "chicken stock, enriched egg noodles (wheat flour, eggs, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), chicken meat, water, chicken fat, salt, lower sodium natural sea salt, monosodium glutamate, corn starch, dehydrated mechanically separated chicken, modified food starch, yeast extract, flavoring, sodium phosphate, soy protein isolate, beta carotene, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Tomato (soup)",
+                        ingredients: "tomato puree (water, tomato paste), water, high fructose corn syrup, wheat flour, vegetable oil (corn, cottonseed, canola, soybean), salt, potassium chloride, lower sodium natural sea salt, flavoring, citric acid, ascorbic acid (vitamin c), monopotassium phosphate"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Chicken Noodle (soup)",
+                        ingredients: "chicken stock, enriched egg noodles (wheat flour, eggs, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), chicken meat, carrots, chicken fat, salt, potassium chloride, potato starch, flavoring, high fructose corn syrup, dehydrated mechanically separated chicken, lower sodium natural sea salt, modified food starch, maltodextrin, milk solids, disodium guanylate, disodium inosinate, beta carotene, nonfat dry milk, sodium phosphate, soy protein isolate, yeast extract, ascorbic acid, beef extract, dehydrated chicken, spice"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Chicken With Rice (soup)",
+                        ingredients: "chicken stock, rice, chicken meat, carrots, modified food starch, chicken fat, salt, flavoring (sesame seed oil), celery, potassium chloride, chicken flavor, dehydrated onions, dehydrated mechanically separated chicken, dehydrated garlic, high fructose corn syrup, spice, lower sodium natural sea salt, maltodextrin, milk solids, beta carotene, sodium phosphate, soy protein isolate, yeast extract, nonfat dry milk, disodium guanylate, disodium inosinate, torula yeast, cream, ascorbic acid, beef extract, chicken skins, dehydrated chicken, wheat"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Light Chicken With White & Wild Rice",
+                        ingredients: "chicken stock, rice, chicken meat, corn, carrots, wild rice, red peppers, modified food starch, chicken flavor, salt, potassium chloride, celery, chicken fat, flavoring, dehydrated mechanically separated chicken, high fructose corn syrup, water, dehydrated onions, spice, lower sodium natural sea salt, yeast extract, beta carotene, disodium guanylate, disodium inosinate, sodium phosphate, soy protein isolate, citric acid, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Classic Recipe Chicken & Stars",
+                        ingredients: "chicken stock, enriched pasta (wheat flour, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), chicken meat, carrots, salt, modified food starch, chicken fat, water, celery, monosodium glutamate, flavoring, dehydrated chicken broth, sugar, beta carotene, sodium phosphate, soy protein isolate, dehydrated onions, yeast extract, dehydrated chicken"
+                    },                    
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Kids Chicken Noodle O’s",
+                        ingredients: "chicken stock, enriched egg noodle product (wheat flour, eggs, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), carrots, chicken meat, chicken fat, celery, salt, potassium chloride, monosodium glutamate, chicken flavor, potato starch, flavoring, sugar, maltodextrin, dehydrated mechanically separated chicken, onions, water, vegetable oil, yeast extract, modified food starch, corn starch, lower sodium natural sea salt, beta carotene, sodium phosphate, soy protein isolate, disodium inosinate, disodium guanylate, spice, flavoring (soybean oil, soy lecithin), dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Classic Recipe Mega Noodle",
+                        ingredients: "chicken stock, enriched egg noodle product (wheat flour, eggs, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), chicken meat, carrots, modified food starch, salt, chicken fat, celery, monosodium glutamate, flavoring, dehydrated chicken broth, sugar, beta carotene, sodium phosphate, soy protein isolate, dehydrated onions, yeast extract, water, dehydrated chicken"
+                    },                          
+                    {
+                        brandname: "Campbell's",
+                        productname: "French Onion (soup)",
+                        ingredients: "beef stock, onions, water, dehydrated onions, salt, yeast extract, vegetable oil, potato starch, sugar, monosodium glutamate, flavoring, caramel color, beef flavor (beef stock, yeast extract), hydrolyzed yeast protein, enzyme modified cheddar cheese (cheddar cheese, cultured milk, salt, enzymes, calcium chloride, water, disodium phosphate, enzymes), natural flavoring (milk), hydrolyzed soy protein, beef fat, citric acid, potassium chloride, dextrose, hydrolyzed wheat gluten"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Broccoli Cheese (soup)",
+                        ingredients: "water, broccoli, vegetable oil (corn, cottonseed, canola, soybean), wheat flour, modified food starch, salt, cream, cheddar cheese (cultured milk, salt, enzymes), dehydrated whey, sugar, whey, dehydrated enzyme modified cheese and butter (cheddar cheese [milk, cultures, salt, enzymes], butter, cultures, enzymes), soy protein concentrate, dehydrated onions, potassium chloride, cheddar cheese (milk, cultures, salt, enzymes), dehydrated buttermilk, parmesan cheese (milk, cultures, salt, enzymes), beta carotene, lactic acid, flavoring, disodium phosphate, sodium phosphate, zinc chloride, granular cheese (milk, cultures, salt, enzymes), semisoft cheese (milk, cultures, salt, enzymes), blue cheese (milk, salt, cultures, enzymes), vinegar"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cheddar Cheese (soup)",
+                        ingredients: "water, wheat flour, cheddar cheese (milk, cultures, salt, enzymes, water, salt, annatto), modified food starch, vegetable oil (corn, cottonseed, canola, soybean), salt, dehydrated enzyme modified cheese and butter (cheddar cheese [milk, cultures, salt, enzymes], butter, cultures, enzymes), dehydrated whey, sugar, dehydrated buttermilk, sodium phosphate, flavoring (soy), lactic aid, flavoring, sodium citrate, enzyme modified butter, skim milk, beta carotene, butter (cream), butter (cream, salt), cream powder (cream, soy lecithin), buttermilk, whey protein concentrate, partially hydrogenated soybean oil, oleic acid, enzyme modified butter fat, enzyme modified oil, enzyme modified cheddar cheese (milk, cultures, salt, enzymes, calcium chloride, water, disodium phosphate), whey"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Chicken With Rice (soup)",
+                        ingredients: "chicken stock, rice, chicken meat, carrots, water, modified food starch, chicken fat, salt, celery, monosodium glutamate, potassium chloride, flavoring (soybean oil, soy lecithin), sugar, maltodextrin, onions, vegetable oil, dehydrated mechanically separated chicken, yeast extract, corn starch, lower sodium natural sea salt, beta carotene, sodium phosphate, soy protein isolate, disodium inosinate, disodium guanylate, spice, lactic acid, dehydrated chicken, wheat"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Homestyle Chicken Noodle (soup)",
+                        ingredients: "chicken stock, enriched egg noodles (wheat flour, egg whites, eggs, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid, chicken meat, carrots, modified food starch, salt, chicken fat, celery, monosodium glutamate, water, yeast extract, dehydrated onions, vegetable oil, modified food starch, beta carotene, spice, sodium phosphate, soy protein, isolate, dehydrated garlic, flavoring, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Chicken Vegetable (soup)",
+                        ingredients: "chicken stock, potatoes, carrots, corn, diced tomatoes, tomato juice, peas, celery, chicken meat, modified food starch, enriched pasta (wheat flour, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), onions, salt, apple juice concentrate, chicken flavor, chicken fat, monosodium glutamate, dehydrated onions, spice, dehydrated garlic, modified food starch, flavoring, sodium phosphate, soy protein isolate, turmeric, beta carotene, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "98% Fat Free Cream of Chicken (soup)",
+                        ingredients: "chicken stock, wheat flour, modified food starch, chicken meat, cream (milk), salt, vegetable oil, monosodium glutamate, yeast extract, dehydrated mechanically separated chicken, soy protein concentrate, chicken fat, flavoring, vegetable oil, water, beta carotene, sodium phosphate, soy protein isolate, chicken flavor, soy lecithin, butter (cream), cream powder (cream, soy lecithin), natural flavor dehydrated butter (cream, salt), dehydrated chicken, dehydrated buttermilk, enzyme modified butter, canola oil, butter (cream, annatto), whey protein concentrate, xanthan gum, partially hydrogenated soybean oil, oleic acid, dehydrated butter, butyric acid, nonfat dry milk, acetoin powder, acetyl propionyl, guar gum, enzyme modified butter fat, enzyme modified butter oil, buttermilk, whey, acetic acid, maltol"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Creamy Chicken Noodle",
+                        ingredients: "chicken stock, enriched egg noodles (wheat flour, eggs, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), vegetable oil, modified food starch, carrots, cream (milk), chicken meat, salt, dehydrated mechanically separated chicken, dehydrated whey (milk), monosodium glutamate, soy protein concentrate, chicken flavor, corn syrup solids, whey, beta carotene, calcium caseinate, guar gum, yeast extract, flavoring, modified food starch, xanthan gum, dehydrated chicken broth, sodium phosphate, soy protein isolate, dehydrated chicken, chicken fat"
+                    },                    
+                    {
+                        brandname: "Campbell's",
+                        productname: "Split Pea With Ham (soup)",
+                        ingredients: "water, split peas, cooked ham water added (pork, water, salt, sugar, sodium phosphates, sodium ascorbate, sodium nitrite), bacon (water, alt, sugar, sodium phosphate, sodium erythorbate, sodium nitrate), carrots, wheat flour, salt, potato starch, sugar, celery, flavoring, natural smoke flavoring"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Beef With Vegetables & Barley (soup)",
+                        ingredients: "beef stock, water, toasted barley, carrots, potatoes, tomato puree (water, tomato paste), seasoned beef (water, salt, sodium phosphate), peas, celery, modified food starch, salt, beef, yeast extract, caramel color, flavoring, beef flavor (beef stock, yeast extract), hydrolyzed soy protein, hydrolyzed wheat gluten, dextrose"
+                    },                          
+                    {
+                        brandname: "Campbell's",
+                        productname: "Light Chicken Gumbo",
+                        ingredients: "chicken meat, celery, modified food starch, carrot juice concentrate, salt, high fructose corn syrup, potassium chloride, chicken fat, flavoring, red peppers, dehydrated mechanically separated chicken, green peppers, spice, yeast extract, lower sodium natural sea salt, sodium phosphate, soy protein isolate, disodium inosinate and disodium guanylate, citric acid, caramel color, dehydrated chicken, wheat"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Homestyle Chicken Noodle (soup)",
+                        ingredients: "chicken stock, enriched egg noodles (wheat flour, egg whites, eggs, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), chicken meat, carrots, modified food starch, flavoring, salt, chicken fat, celery, potassium chloride, dehydrated onions, yeast extract, chicken flavor, lower sodium natural sea salt, vegetable oil, disodium guanylate, disodium inosinate, spice, beta carotene, sodium phosphate, soy protein isolate, dehydrated garlic, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Cream of Chicken",
+                        ingredients: "chicken stock, water, modified food starch, chicken meat, cream (milk), wheat flour, vegetable oil, salt, potassium chloride, flavoring, soy protein concentrate, yeast extract, chicken fat, beta carotene, lower sodium natural sea salt, spice, disodium guanylate, disodium inosinate, sodium phosphate, soy protein isolate, mixed triglycerides, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Kids Souper Shapes Shaped Pasta With Chicken in Chicken Broth (soup)",
+                        ingredients: "chicken stock, enriched pasta (wheat flour, egg white, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), carrots, chicken meat, modified food starch, chicken fat, salt, potassium chloride, monosodium glutamate, chicken flavor, flavoring, sugar, maltodextrin, dehydrated mechanically separated chicken, celery, onions, water, vegetable oil, yeast extract, corn starch, lower sodium natural sea salt, beta carotene, sodium phosphate, soy protein isolate, disodium inosinate, disodium guanylate, spice, flavoring (soybean oil, soy lecithin), dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Kids Cool Shapes Shaped Pasta With Chicken in Chicken Broth (soup)",
+                        ingredients: "chicken stock, enriched pasta (wheat flour, egg white, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), carrots, chicken meat, modified food starch, chicken fat, salt, potassium chloride, monosodium glutamate, chicken flavor, flavoring, sugar, maltodextrin, dehydrated mechanically separated chicken, celery, onions, water, vegetable oil, yeast extract, cornstarch, lower sodium isolate, disodium inosinate, disodium guanylate, spice, flavoring (soybean oil, soy lecithin), dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Classic Recipe Kid Shapes Shaped Pasta With Chicken in Chicken Broth (soup)",
+                        ingredients: "chicken stock, enriched pasta product (egg white, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), chicken meat, carrots, modified food starch, salt, chicken fat, monosodium glutamate, water, flavoring, dehydrated chicken broth, sugar, beta carotene, sodium phosphate, soy protein isolate, dehydrated onions, yeast extract, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Mushroom With Roasted Garlic (soup)",
+                        ingredients: "water, mushrooms, modified food starch, wheat flour, vegetable oil (corn, cottonseed, canola, soybean), tomato puree (water, tomato paste), salt, cream (milk), monosodium glutamate, flavoring, soy protein concentrate, onion juice concentrate, dehydrated garlic, dehydrated roasted garlic, spice, yeast extract, disodium guanylate, disodium inosinate, caramel color, sunflower oil, butter (cream [milk], salt), cream powder (cream [milk], soy lecithin), dehydrated mushrooms, butter (cream [milk], salt), buttermilk, enzyme modified butter (milk), skim milk, whey protein concentrate (milk), partially hydrogenated soybean oil, oleic acid, enzyme modified butter fat (milk), enzyme modified oil, whey (milk), soy lecithin"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Chicken With Herbs (soup)",
+                        ingredients: "water, chicken stock, modified food starch, wheat flour, chicken meat, cream, chicken fat, salt, vegetable oil, soy protein concentrate, monosodium glutamate, dehydrated mechanically separate chicken, yeast extract, dehydrated whey, potassium chloride, spice, flavoring, beta carotene, disodium guanylate, disodium inosinate, sodium phosphate, soy protein isolate, reconstituted skim milk, soy lecithin, butter (cream, annatto), butter (cream), cream powder (cream, soy lecithin), dehydrated chicken, enzyme modified butter, oleic acid, butter oil, butter flavor (enzyme modified butter, soy lecithin, acetic acid)"
+                    },                    
+                    {
+                        brandname: "Campbell's",
+                        productname: "Classic Recipe Awesome Shapes Shaped Pasta With Chicken in Chicken Broth (soup)",
+                        ingredients: "chicken stock, enriched pasta (enriched wheat flour [wheat, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid], egg white), chicken meat, carrots, modified food starch, salt, chicken fat, monosodium glutamate, water flavoring, dehydrated chicken broth, sugar, beta carotene for color, sodium phosphate, soy protein isolate, dehydrated onions, yeast extract, dehydrated chicken"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Vegetable (soup)",
+                        ingredients: "beef stock, potatoes, carrots, enriched macaroni product (wheat flour, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), corn, peas, tomato paste, green beans, modified food starch, high fructose corn syrup, celery, salt, potassium chloride, vegetable oil, flavoring, dehydrated onions, spice, lower sodium natural sea salt, caramel color, yeast extract, ascorbic acid (vitamin c), disodium guanylate, disodium inosinate, paprika extract"
+                    },                          
+                    {
+                        brandname: "Campbell's",
+                        productname: "Vegetarian Vegetable (soup)",
+                        ingredients: "tomato puree (water, tomato paste), potatoes, water, carrots, peas, corn, diced tomatoes in tomato juice, green beans, enriched macaroni product (wheat flour, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), high fructose corn syrup, modified food starch, celery, salt, monosodium glutamate, dehydrated onions, yeast extract, spice, flavoring, paprika extract"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Vegetable Beef (soup)",
+                        ingredients: "toasted barley, modified food starch, celery, salt, yeast extract, tomato paste, monosodium glutamate, dehydrated onions, caramel color, flavoring, beef flavor (beef stock, yeast extract), hydrolyzed yeast protein, hydrolyzed soy protein, beef fat, citric acid, dextrose, hydrolyzed wheat gluten"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Old Fashioned Vegetable (soup)",
+                        ingredients: "beef stock, carrots, potatoes, celery, enriched macaroni product (wheat flour, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), peas, tomato puree (water, tomato paste), green beans, corn, cabbage, modified food starch, onions, salt, vegetable oil, celery leaves, yeast extract, monosodium glutamate, hydrolyzed soy protein, caramel color, parsley, hydrolyzed wheat gluten, dehydrated garlic"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Cream of Potato (soup)",
+                        ingredients: "water, potatoes,  modified food starch, wheat flour, dehydrated whey (milk), salt, cream, vegetable oil (corn, cottonseed, canola, soybean), dehydrated potatoes, dehydrated onions, butter (cream), monosodium glutamate, soy protein concentrate, yeast extract, flavoring, citric acid"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Vegetable (soup)",
+                        ingredients: "beef stock, carrots, potatoes, tomato puree (water, tomato paste), enriched macaroni product (wheat flour, egg whites, niacin, ferrous sulfate, thiamine mononitrate, riboflavin, folic acid), corn, green beans, peas, high fructose corn syrup, celery, modified food starch, salt, yeast extract, cabbage, dehydrated onions, onions, monosodium glutamate, celery leaves, hydrolyzed yeast protein, flavoring, beef fat, beef flavor (beef stock, yeast extract), dehydrated garlic, paprika exract, hydrolyzed soy protein, spice, dextrose, disodium guanylate, disodium inosinate, parsley, caramel color, hydrolyzed wheat gluten, curry (spice, turmeric)"
+                    },
+                    {
+                        brandname: "Campbell's",
+                        productname: "Healthy Request Cream of Mushroom",
+                        ingredients: "water, mushrooms, modified food starch, wheat flour, vegetable oil (corn, cottonseed, canola, soybean), sugar, cream (milk), salt, potassium chloride, flavoring, soy protein concentrate, calcium carbonate, yeast extract, lower sodium natural sea salt, disodium guanylate, disodium inosinate, mixed triglycerides, spice, dehydrated mushrooms"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Hearty Garden Vegetable Organic Soup",
+                        ingredients: "organic vegetable stock (water, certified organic vegetables, certified organic reconstituted vegetables [certified organic carrots, certified organic celery, certified organic onions, certified organic tomatoes]), water, organic diced tomatoes, organic tomato juice, organic carrots, roasted organic potatoes, organic tomato puree (water, organic tomato paste), organic corn, organic onions, organic peas, organic butter (organic cream [organic milk], salt), organic potato starch, organic green beans, organic celery organic cabbage, organic barley, salt, organic evaporated cane sugar juice, organic spice, organic cane sugar, organic maltodextrin, organic soy sauce (water, certified organic soybeans, salt, certified organic alcohol), organic parsley, flavoring, organic dehydrated onion, yeast extract, organic dehydrated garlic"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Tomato Basil Bisque Organic Soup",
+                        ingredients: "water, organic diced tomatoes, organic tomato juice, organic cream (organic milk), organic tomato paste, organic cane sugar juice, organic tapioca starch, organic spice, organic white rice flour, sea salt"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Old Fashioned Potato Organic Soup",
+                        ingredients: "water, organic vegetable stock (water, certified organic vegetables, certified organic  reconstituted vegetables [certified organic carrots, certified organic celery, certified organic onions, certified organic tomatoes]), roasted organic potatoes, organic cream (organic milk), organic carrots, organic onions, organic butter (organic cream [organic milk], salt), organic celery, organic tapioca starch, organic leeks, organic wheat flour salt, organic potato starch, organic spice, sea salt, organic cane sugar, organic soy sauce (water, certified organic soybeans, salt, certified organic alcohol), organic maltodextrin, flavoring, yeast extract, organic dehydrated onion, organic garlic, organic turmeric"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Free Range Chicken Noodle Organic Soup",
+                        ingredients: "organic chicken stock (certified organic chicken meat, salt, certified organic cane sugar, certified organic maltodextrin, natural flavor, certified organic dried onion, certified organic potato starch, certified organic dried garlic, certified organic turmeric, certified organic spice extract), water, organic carrots, organic chicken meat, organic egg noodle (certified organic semolina wheat flour, certified organic egg, certified organic egg white), organic celery, organic tapioca starch, organic onions, organic chicken fat, sea salt, organic vegetables (certified organic carrots, certified organic onions, certified organic celery), organic parsley, organic paprika, dehydrated organic onions, organic cane juice, organic spice, organic turmeric, flavoring"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Signature Butternut Squash Organic Soup",
+                        ingredients: "organic vegetable stock )organic vegetables [certified organic carrots, certified organic onions, certified organic celery]), organic butternut squash, organic cream (organic milk), organic tapioca starch, organic honey, organic evaporated cane sugar juice, sea salt, organic butter (organic cream [organic milk], salt), organic potato starch, organic tomato paste, organic spice, organic molasses, organic yeast extract, organic dehydrated carrot, organic dehydrated onion, organic potato flour, organic lemon juice concentrate, flavoring, organic canola oil"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Free Range Chicken With White & Wild Rice Organic Soup",
+                        ingredients: "organic maltodextrin, natural flavor, certified organic dried onion, certified organic potato starch, certified organic dried garlic, certified organic turmeric, certified organic spice extract), water organic carrots, organic chicken meat, organic rice, organic potato starch, organic wild rice, organic chicken fat, organic celery, organic onions, organic vegetables (certified organic carrots, certified organic onions, certified organic celery), sea salt, organic parsley, dehydrated organic onions, organic cane juice, organic paprika, organic spice, organic turmeric, flavoring"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Classic Minestrone Organic Soup",
+                        ingredients: "organic vegetable stock (water, certified organic vegetables, certified organic concentrated vegetables [certified organic carrots, certified organic celery, certified organic onions, certified organic tomato], salt, certified organic soy sauce [water, certified organic soybean, salt, certified organic alcohol], certified organic cane sugar, certified organic maltodextrin, natural flavor, certified organic potato starch, autolyzed yeast extract, certified organic dried onion, certified organic dried garlic, certified organic spice), organic tomatoes (certified organic tomatoes, certified organic tomato juice, calcium chloride, citric acid), organic macaroni produce (certified organic semolina wheat flour, certified organic egg white powder), organic red kidney beans, organic white beans, organic carrots, organic tomato paste, organic green beans, organic spinach, organic onions, organic cabbage, organic extra virgin olive oil, organic celery, organic spic, organic evaporated cane juice, organic peas, organic garlic, sea salt"
+                    },
+                    {
+                        brandname: "Wolfgang Puck",
+                        productname: "Hearty Lentil Vegetable Organic Soup",
+                        ingredients: "water, organic vegetable stock (water, certified organic vegetables, certified organic reconstituted vegetables [certified organic carrots, certified organic celery, certified organic onions, certified organic tomatoes]), roasted organic potatoes, organic green lentils, organic onions, organic carrots, organic diced tomatoes, organic tomato juice, organic celery, organic spinach, organic potato starch, sea salt, organic garlic, organic honey, salt, organic cane sugar, organic soy sauce (water, certified organic soybeans, salt, certified organic alcohol), organic maltodextrin, organic spice, flavoring, yeast extract, organic dehydrated onion, organic spice"
+                    }
+ 
                 ]
-*/
 
-/*
+
+    /*
 for (var item in productArray) {
     pc.saveProduct(productArray[item]);
 }
-*/
+    */
 
 module.exports = productArray;
