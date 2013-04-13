@@ -1,10 +1,10 @@
 var ProductController = function () {
-   "use strict";
+    "use strict";
     var Product = require('../models/product'),
         nodemailer = require('nodemailer'),
         config = require('../config');
-    
-    function send(res,msg) {
+
+    function send(res, msg) {
         if (res !== undefined) {
             res.send(msg);
         } else {
@@ -23,193 +23,144 @@ var ProductController = function () {
                 return callback(err);
             } else if (res !== undefined) {
                 res.send(products);
-            } else{
+            } else {
                 return callback(null, products); //res.send(products);
             }
         });
     };
- 
+
     this.removeAllProducts = function (req, res) {
         Product.find().remove();
     };
-    
 
     this.findProduct = function (req, res, callback) {
         var obj = req.body || req,
             brandname,
             re_brandname,
             productname,
-            re_productname, 
-                ingredient,
-                re_ingredient,
-                notIngredient = false,
-                searchObj,
-                empty,
+            re_productname,
+            ingredient,
+            re_ingredient,
+            notIngredient = false,
+            searchObj = {},
+            empty,
             serverReq = false,
-            webReq = false;
-                
-        if (obj === req.body){
+            webReq = false,
+            item;
+
+        //method to create array of ingredients, each as regular expression
+        function getIng(ing) {
+            if ((ing !== '') && (ing !== undefined)) {
+                var ingArr = ing.split(' '),
+                    ingStr = '';
+
+                for (item = 0; item < ingArr.length; item++) {
+                    ingArr[item] = new RegExp(ingArr[item], 'i');
+                }
+
+                return ingArr;
+            }
+        }
+
+        //method to perform the search on the database using the search object created
+        function search(str) {
+            Product.find(str, function (err, products) {
+                if (err) {
+                    return callback(err);
+                } else if (res !== undefined) {
+                    res.render('search_results', { title: 'Results', nbsp: ' ', results: products });
+                } else {
+                    callback(null, products);
+                }
+            });
+        }
+
+        //determine wheather web request or server request, define empty value    
+        if (obj === req.body) {
             webReq = true;
             empty = '';
         } else {
             serverReq = true;
             empty = undefined;
         }
-    
-        /* TODO:  FIND OUT WHY CANNOT USE THIS.STRIP METHOD FOR WEB */
-        if (obj.brandname !== undefined) {
-            if (webReq) {
-                brandname = obj.brandname.toUpperCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
-            } else {
-                brandname = this.strip(obj.brandname.toUpperCase());
-            } 
-        }
-        
-        if (obj.productname !== undefined) {
-            if (webReq){
-                productname = obj.productname.toUpperCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
-            } else {
-                productname = this.strip(obj.productname.toUpperCase());
-            }
-        }
-        
-        if (obj.ingredient !== undefined) {
-            if (webReq){
-                ingredient = obj.ingredient.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
-            } else {
-                ingredient = this.strip(obj.ingredient.toLowerCase());
-            }
-        }
-        
-        if (obj.notIngredient !== undefined) {
-            notIngredient = obj.notIngredient;                  
-        }
 
-        //CREATE REGEX FOR PARTIAL MATCH
-        re_brandname = new RegExp('^' + brandname);  
-        re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i");
-        re_ingredient = new RegExp(ingredient, "i");
-
-        //SETUP SEARCH CRITERIA
+        //reformat user-set brandname, productname, and ingredient using regex for searching the database
         if (obj.brandname !== empty) {
-            if (obj.productname !== empty) {
-                if (obj.ingredient !== empty) {
-                    if (obj.notIngredient !== undefined) {
-                        //brand, product, and not ingredient
-                        searchObj = { 'brandname_stripped' : re_brandname, 'productname_stripped' : re_productname, 'ingredients_stripped' : { $not :  re_ingredient } };
-                        search(searchObj);
-                    } else {
-                        //brand, product and ingredient
-                        searchObj = { 'brandname_stripped' : re_brandname, 'productname_stripped' : re_productname, 'ingredients_stripped' : re_ingredient };
-                        search(searchObj);
-                    }
-                    
-                } else {        
-                    //brand and product search
-                    searchObj = { 'brandname_stripped' : re_brandname, 'productname_stripped' : re_productname };
-                    search(searchObj);
-                }
-            } else {    
-                if (obj.ingredient !== empty){
-                    if (obj.notIngredient !== undefined) {
-                        //brand and not ingredient search
-                        searchObj = { 'brandname_stripped' : re_brandname, 'ingredients_stripped' : { $not :  re_ingredient } };
-                        search(searchObj);  
-                    } else {
-                        //brand andingredient search
-                        searchObj = { 'brandname_stripped' : re_brandname, 'ingredients_stripped' : re_ingredient };
-                        search(searchObj);
-                    }
-                    
-                } else {
-                    //brand search
-                    searchObj = { 'brandname_stripped' : re_brandname };
-                    search(searchObj);
-                }
-            }
-        } else if (obj.productname !== empty) {
-            if (obj.ingredient !== empty) {
-                if (obj.notIngredient !== undefined) {
-                    //product and not ingredient search
-                    searchObj = { 'productname_stripped' : re_productname, 'ingredients_stripped' : { $not :  re_ingredient }  };
-                    search(searchObj);
-                } else {    
-                    //product and ingredient search
-                    searchObj = { 'productname_stripped' : re_productname, 'ingredients_stripped' : re_ingredient };
-                    search(searchObj);
-                }
-            } else {    
-                //product search
-                searchObj = { 'productname_stripped' : re_productname };
-                search(searchObj);
-            }
-        } else if (obj.ingredient !== empty) {
-            if (obj.notIngredient !== undefined) {
-                //not ingredient search
-                searchObj = { 'ingredients_stripped' : { $not: re_ingredient } };
-                search(searchObj);
-            } else {           
-                //ingredient search 
-                searchObj = { 'ingredients_stripped' : re_ingredient };
-                search(searchObj);
-            }
-        } else {
-            send(res,'Please enter search criteria');
+            brandname = obj.brandname.toUpperCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
         }
-        
-        //RETRIEVE SEARCH RESULTS FROM DB
-        function search (str) {
-            Product.find(str, function (err, products) {
-                        if (err) {
-                            return callback(err);
-                        } else if (res !== undefined) {
-                            res.render('search_results', { title: 'Results', nbsp: ' ', results: products });
-                        } else {
-                            callback(null, products);
-                        }
-                });
-        }  
+
+        if (obj.productname !== empty) {
+            productname = obj.productname.toUpperCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
+        }
+
+        if (obj.ingredient !== empty) {
+            ingredient = obj.ingredient.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
+        }
+
+        if (obj.notIngredient !== empty) {
+            notIngredient = obj.notIngredient;
+        }
+
+        //create regex for partial match
+        re_brandname = new RegExp('^' + brandname);
+        re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i");
+        re_ingredient = getIng(ingredient);
+
+        //create search object
+        if (obj.brandname !== empty) {
+            searchObj.brandname_stripped = re_brandname;
+        }
+        if (obj.productname !== empty) {
+            searchObj.productname_stripped = re_productname;
+        }
+        if (obj.ingredient !== empty) {
+            if (obj.notIngredient !== undefined) {
+                searchObj.ingredients_stripped = {$nin: re_ingredient.valueOf()};
+            } else {
+                searchObj.ingredients_stripped = {$all: re_ingredient.valueOf()};
+            }
+        }
+
+        //retrieve the search results from the database
+        search(searchObj);
     };
-    
-    this.contribute = function (req, res){
-        
+
+    this.contribute = function (req, res) {
+
         var brandname = req.body.brandname.toUpperCase(),
             productname = req.body.productname.toUpperCase(),
             ingredients = req.body.ingredients.toLowerCase(),
             re_brandname = new RegExp('^' + brandname),
             re_productname = new RegExp("(\\s|^)" + productname + "(\\s|$)", "i"),
-            smtpTransport = nodemailer.createTransport("SMTP",{
-                    service: "Gmail",
-                    auth: {
-                        user: process.env.user || config.user,
-                        pass: process.env.pass || config.pass
-                    }
-                });
+            smtpTransport = nodemailer.createTransport("SMTP", {
+                service: "Gmail",
+                auth: {
+                    user: process.env.user || config.user,
+                    pass: process.env.pass || config.pass
+                }
+            });
 
         Product.find({'brandname_stripped' : re_brandname, 'productname_stripped' : re_productname}, function (err, products) {
-                if (products.length === 0) {
-                    smtpTransport.sendMail({
-                            from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
-                                to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
-                                subject: "Know Your Food Contribution", // Subject line
-                                text: 'BRAND NAME: ' + brandname + '\nPRODUCT NAME: ' + productname + '\nINGREDIENTS: ' + ingredients 
-                                }, function(error, response){
-                            if (error) {
-                                send(res, error.message);
-                            } else {
-                                //res.redirect('/contribute');
-                                res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'Your contribution has been sent.  Thank you!' });
-                            }
-                        });
-                } else {
-                    res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'The product you entered already exists in the database' });
-                }
+            if (products.length === 0) {
+                smtpTransport.sendMail({
+                    from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
+                    to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
+                    subject: "Know Your Food Contribution", // Subject line
+                    text: 'BRAND NAME: ' + brandname + '\nPRODUCT NAME: ' + productname + '\nINGREDIENTS: ' + ingredients
+                }, function(error, response) {
+                    if (error) {
+                        send(res, error.message);
+                    } else {
+                        res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'Your contribution has been sent.  Thank you!' });
+                    }
+                });
+            } else {
+                res.render('contribute', { title: 'Contribute', nbsp: ' ', message: 'The product you entered already exists in the database' });
+            }
         });
-        
-    }
-    
+    };
+
     this.saveProduct = function (req, res) {
-        
         var obj = req.body || req,
             ingredients_array,
             brandname,
@@ -229,7 +180,7 @@ var ProductController = function () {
 
         brandname_stripped = this.strip(brandname);
         productname_stripped = this.strip(productname);
-        ingredients_stripped = ingredients.replace(/['";:.\/?\\-]/g, '');
+        ingredients_stripped = ingredients.replace(/['";:.\/?\\\-]/g, '');
 
         //parse ingredients by commas and store in array
         ingredients_array = ingredients.split(',');
@@ -270,34 +221,32 @@ var ProductController = function () {
         }
     };
 
-    this.contact = function (req, res){
-        
+    this.contact = function (req, res) {
         var contactName = req.body.name,
             returnEmail = req.body.email,
             message = req.body.message,
-                smtpTransport = nodemailer.createTransport("SMTP",{
+            smtpTransport = nodemailer.createTransport("SMTP", {
                 service: "Gmail",
-                    auth: {
-                            user: process.env.user || config.user,
-                            pass: process.env.pass || config.pass
-                    }
-                });
-      
-        smtpTransport.sendMail({
-                    from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
-                    to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
-                    subject: "Contact Us", // Subject line
-                    text: 'NAME: ' + contactName + '\nEMAIL ADDRESS: ' + returnEmail + '\nMESSAGE: ' + message 
-            }, function(error, response){
-                if (error) {
-                        send(res, error.message);
-                } else {
-                    res.render('message', { title: 'Message', nbsp: ' ', message: 'The following message has been sent to Know Your Food.  Thank you!', from: contactName, email: returnEmail, messageBody: message });
+                auth: {
+                    user: process.env.user || config.user,
+                    pass: process.env.pass || config.pass
                 }
+            });
+
+        smtpTransport.sendMail({
+            from: "Know Your Food Contribution <KnowYourFoodIngredients@gmail.com>", // sender address
+            to: "Know Your Food <KnowYourFoodIngredients@gmail.com>", // comma separated list of receivers
+            subject: "Contact Us", // Subject line
+            text: 'NAME: ' + contactName + '\nEMAIL ADDRESS: ' + returnEmail + '\nMESSAGE: ' + message
+        }, function(error, response) {
+            if (error) {
+                send(res, error.message);
+            } else {
+                res.render('message', { title: 'Message', nbsp: ' ', message: 'The following message has been sent to Know Your Food.  Thank you!', from: contactName, email: returnEmail, messageBody: message });
+            }
         });
-    }
+    };
 
 };
-
 
 module.exports = ProductController;
