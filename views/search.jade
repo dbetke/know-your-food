@@ -1,5 +1,22 @@
 extends layout
 
+block append script
+  script
+    function validateFormInput() { 
+      var brandname = $('#brandname').val(),
+          productname = $('#productname').val(),
+          ingredient = $('#ingredient').val(),
+          result;
+      if ((brandname === '') && (productname === '') && (ingredient === '')) {
+        $('#msg').addClass('alert').text('Please enter search criteria.');
+        result = false;
+      } else if ((brandname === '') && (productname === '') && (ingredient !== '')){
+        $('#msg').addClass('alert').text('Please add brand or product criteria in addition to ingredient.');
+        result = false;
+      }
+      return result;
+    };
+
 block navbar
   ul.nav.nav-pills.pull-right
     li
@@ -15,10 +32,11 @@ block navbar
   div.spacer
       
 block content  
+  div#msg
   div.row.span3.offset2.center
     h4 Search Product Ingredients
     p
-      form(method='post',action='/search_results') 
+      form(method='post',action='/search_results', onSubmit='return validateFormInput()') 
         label Brand
         input(type='text', name='brandname', id='brandname')
 
