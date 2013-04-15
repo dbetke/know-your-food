@@ -3,18 +3,14 @@ extends layout
 block append script
   script
     $('document').ready(function () {
-      $('b').css({'cursor':'pointer'});
-
-      $('b').click(function () {
-        if ($(this).next('p').is(':visible')) {
-          $(this).next('p').hide();
-          $(this).css({'color':'#D8D8D8'});
-        } else {
-          $(this).next('p').show();
-          $(this).css({'color':'#000000'});
-        }
-      });
-      
+      function sortUL(selector) {
+          $(selector).children("#item").sort(function(a, b) {
+              var upA = $(a).text().toUpperCase();
+              var upB = $(b).text().toUpperCase();
+              return (upA < upB) ? -1 : (upA > upB) ? 1 : 0;
+          }).appendTo(selector);
+      }
+      sortUL("#sortable");
     });
 
 block navbar
@@ -38,10 +34,13 @@ block content
 
 block results
   if results.length > 0
-    -for result in results
-      b=result.brandname + " " + result.productname 
-      p=result.ingredients
-      p 
+    div#sortable
+      -for result in results
+        p#item
+          b=result.brandname + " " + result.productname 
+          <br />
+          i=result.ingredients
+          p
   else
     p Sorry, no results found.
     br
