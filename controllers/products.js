@@ -97,7 +97,7 @@ var ProductController = function () {
             ingredient = obj.ingredient.toLowerCase().replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ").replace(/^\s+/, '').replace(/\s+$/, '');
         }
 
-        if (obj.notIngredient !== empty) {
+        if ((obj.notIngredient !== empty) && (obj.ingredient !== empty)) {
             notIngredient = obj.notIngredient;
         }
 
